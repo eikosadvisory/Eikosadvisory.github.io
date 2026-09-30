@@ -108,13 +108,50 @@ tr:last-child td{border-bottom:0}
 .links a{color:var(--copper-on-navy)}
 footer{background:var(--navy);color:var(--on-navy-mute);border-top:1px solid var(--navy-2);padding-block:22px;font-size:.88rem}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px}
+/* v2 additions */
+.cta{margin-top:28px;display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;font:600 1rem var(--sans);padding:13px 22px;text-decoration:none;background:var(--copper-fill);color:#1B2A41;border:1px solid var(--copper-fill)}
+.btn:hover{background:var(--copper-on-navy)}
+.btn.ghost{background:transparent;color:var(--on-navy);border-color:var(--on-navy-mute)}
+.btn.ghost:hover{background:var(--navy-2)}
+.btn.dark{background:var(--navy);color:var(--on-navy);border-color:var(--navy)}
+.stats{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr))}
+.stat{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--copper-fill);padding:20px 18px;min-width:0}
+.stat b{display:block;font:700 clamp(1.5rem,3.2vw,1.9rem)/1.15 var(--serif);color:var(--ink)}
+.stat span{display:block;margin-top:8px;color:var(--muted);font-size:.93rem}
+.note{margin-top:14px;font-size:.88rem;color:var(--muted)}
+.qs{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr))}
+.q{background:var(--surface);border:1px solid var(--line);padding:20px 22px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.q h3{font-size:1.12rem}
+.q p{color:var(--muted);font-size:.95rem}
+.q .for{margin-top:auto}
+.startbox{margin-top:28px;padding:26px 24px;background:var(--navy);color:var(--on-navy)}
+.startbox h3{color:var(--on-navy);font-size:1.4rem}
+.startbox p{color:var(--on-navy-mute);margin-top:8px;max-width:62ch}
+.bio{margin-top:16px}
+.ex{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));align-items:start}
+.ex table{min-width:0}
+.ex td:nth-child(2){color:var(--ink);white-space:nowrap;text-align:right;font-weight:600}
+.ex th:nth-child(2){text-align:right}
+.ex tr.tot td{background:var(--alt);font-weight:700}
+.ex td:first-child{font:400 .96rem var(--sans)}
+.ex tr.tot td:first-child{font-weight:700}
+.sens td,.sens th{text-align:right}
+.sens td:first-child,.sens th:first-child{text-align:left}
+.sens td:nth-child(2){color:var(--ink);font-weight:400;white-space:normal}
+.sens td:nth-child(n){color:var(--ink)}
+.sens td:first-child{font:600 .96rem var(--sans)}
+.sens td.hl{background:var(--alt);font-weight:700}
+.src{font-size:.88rem;color:var(--muted);margin-top:14px}
+.src a{overflow-wrap:anywhere}
+
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 
 </head><body>
 <header class="top"><div class="wrap">
   <a class="brand" href="#top">Eikos Advisory Services LLP</a>
-  <nav aria-label="Sections"><a href="#practice">Practice</a><a href="#work">Work</a><a href="#sectors">Sectors</a><a href="#record">Record</a><a href="#independence">Independence</a><a href="#contact">Contact</a></nav>
+  <nav aria-label="Sections"><a href="#results">Results</a><a href="#questions">Questions</a><a href="#work">Work</a><a href="#example">Example</a><a href="#sectors">Sectors</a><a href="#record">Record</a><a href="#engage">Start</a><a href="#independence">Independence</a><a href="#contact">Contact</a></nav>
 </div></header>
 
 <main id="top">
@@ -123,8 +160,35 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
   <h1>Contract to number to equipment to evidence</h1>
   <p class="tag">From the tender document to the plant in operation, every number traced to a clause or a stated assumption.</p>
   <p class="lead">Eikos Advisory Services LLP advises developers, EPC contractors, lenders and insurers on bids, sizing, procurement and assurance, from a tender document to a plant in operation. Every engagement is led and signed by its principal.</p>
+  <div class="cta"><a class="btn" href="mailto:kausik@eikosadvisory.com?subject=Diagnostic%20request&amp;body=Document%20to%20be%20reviewed%3A%0ADecision%20it%20feeds%3A%0ADate%20needed%20by%3A">Send me the document</a><a class="btn ghost" href="tel:+919833945444">Call 98339 45444</a></div>
   <div class="who"><span><b>Kausik Chowdhuri</b>, principal</span><span>Thirty-nine years in the Indian power sector</span><span>Seven published works, open access · <a href="https://orcid.org/0009-0001-8271-751X">ORCID 0009-0001-8271-751X</a></span></div>
 </div></div>
+
+<section id="results" class="alt"><div class="wrap">
+  <div class="head"><div class="eyebrow">Results</div><h2>What the bid work has produced</h2></div>
+  <div class="stats">
+    <div class="stat"><b>30+</b><span>PPP engagements led at board level, Kalpataru Power, 2007 to 2018</span></div>
+    <div class="stat"><b>4 of about 14</b><span>power transmission bids won</span></div>
+    <div class="stat"><b>4 of about 11</b><span>road bids won</span></div>
+    <div class="stat"><b>50 MW / 100 MWh</b><span>GUVNL storage project won, carried through development and financial closure</span></div>
+    <div class="stat"><b>565 MW / 1,130 MWh</b><span>standalone BESS portfolio under GUVNL storage agreements</span></div>
+  </div>
+  <p class="note">Results achieved in the principal’s previous roles at Kalpataru Power Transmission, Advait Energy Transitions and KPI Green Energy.</p>
+</div></section>
+
+<section id="questions"><div class="wrap">
+  <div class="head"><div class="eyebrow">Questions we answer</div><h2>Start from the question you have on the table</h2>
+  <p>Each one is answered in writing, from the document in front of you, with every number traced to a clause or a stated assumption.</p></div>
+  <div class="qs">
+    <div class="q"><h3>What tariff do I need to bid to win this tender?</h3><p>The tariff is derived from the tender document and stated assumptions, not chosen and then justified.</p><div class="for">Developers · EPC contractors</div></div>
+    <div class="q"><h3>What does each clause of this agreement really cost me?</h3><p>A clause-by-clause reading: who carries which risk, and what it costs in tariff terms.</p><div class="for">Developers · EPC contractors</div></div>
+    <div class="q"><h3>Is this supplier’s offer safe to accept?</h3><p>Offers normalised to a common basis, with the evidence gates that must be passed before you sign.</p><div class="for">Developers · EPC contractors</div></div>
+    <div class="q"><h3>Will this appraisal survive a lender’s read?</h3><p>A financial case rooted in the contract, with the scenarios that decide it laid open.</p><div class="for">Developers · Lenders</div></div>
+    <div class="q"><h3>Is this installation safe, and what happens after a loss?</h3><p>Requirements mapped to evidence, a graded opinion, and attribution after an incident.</p><div class="for">Lenders · Insurers</div></div>
+    <div class="q"><h3>How will this draft regulation or tender document affect us?</h3><p>Commentary on regulations, orders and tender documents, including tariff and statutory safety regimes.</p><div class="for">Authorities · Developers</div></div>
+  </div>
+  <div class="cta"><a class="btn dark" href="mailto:kausik@eikosadvisory.com?subject=Diagnostic%20request">Send me the document</a></div>
+</div></section>
 
 <section id="practice"><div class="wrap">
   <div class="head"><div class="eyebrow">The practice</div><h2>One principal, two qualifications, named associates by discipline</h2>
@@ -133,6 +197,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
     <div class="card"><h3>BE Mining, Shibpur · First Class Mine Manager’s Certificate, DGMS</h3><p>A statutory competency. The regime itself is the examined subject, and the duty rests personally on the holder.</p></div>
     <div class="card"><h3>PGDBA, ICFAI · Third level CFA (India)</h3><p>Costing, appraisal, financial analysis, and the economic side of regulation.</p></div>
   </div>
+  <p class="bio">Kausik Chowdhuri began underground in coal mining at Eastern Coalfields (1987 to 1996), then worked in electricity regulation with DFID, CRISIL Advisory and KPMG, led PPP bids at Kalpataru Power Transmission for eleven years, and since 2020 has worked in solar, green hydrogen and battery storage. He signs every Eikos engagement personally.</p>
   <div class="tablewrap" style="margin-top:16px" role="region" aria-label="Where each capability was built" tabindex="0">
   <table><thead><tr><th>Capability</th><th>Discipline</th><th>Where it was built</th></tr></thead><tbody>
     <tr><td>Contract and risk</td><td>Both</td><td>Kalpataru: Rs 6,500 cr of road and transmission assets, bid to financial close; storage tenders since</td></tr>
@@ -167,6 +232,37 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
   <div class="strip">Glass box throughout. Every number traces to a clause or to a stated assumption, with a dated record of what it was checked against. What cannot be quantified is marked beside the model, never omitted silently.</div>
 </div></section>
 
+<section id="example"><div class="wrap">
+  <div class="head"><div class="eyebrow">A worked example</div><h2>What capex can a winning tariff carry?</h2>
+  <p>SJVN’s 265 MW / 530 MWh standalone BESS tender in Haryana, won by NLC India Renewables at Rs 2.35 lakh/MW/month. Public information only; the arithmetic is shown so it can be checked.</p></div>
+  <div class="grid g3" style="margin-bottom:16px">
+    <div class="stat"><b>Rs 74.7 cr</b><span>annual revenue at the winning tariff, before availability</span></div>
+    <div class="stat"><b>+19%</b><span>against Rs 1.97 lakh/MW/month at SJVN’s Panipat 250 MW auction</span></div>
+    <div class="stat"><b>Rs 18 lakh/MWh</b><span>VGF ceiling, about Rs 95 crore for the full project</span></div>
+  </div>
+  <div class="ex">
+    <div class="tablewrap" role="region" aria-label="From tariff to capex" tabindex="0"><table>
+      <thead><tr><th>From tariff to capex, Rs lakh per MWh</th><th>Value</th></tr></thead><tbody>
+      <tr><td>Tariff revenue per year, at 95% availability</td><td>13.4</td></tr>
+      <tr><td>Present value of revenue over 12 years, at a 10% project IRR</td><td>91.3</td></tr>
+      <tr><td>Less: present value of running costs</td><td>(13.5)</td></tr>
+      <tr><td>Revenue after running costs</td><td>77.8</td></tr>
+      <tr><td>Add: present value of the Rs 18.0 VGF, received in tranches</td><td>16.6</td></tr>
+      <tr class="tot"><td>Gross capex the tariff can carry</td><td>94.4</td></tr>
+      <tr class="tot"><td>For the whole 530 MWh project</td><td>Rs 500 crore</td></tr>
+      </tbody></table></div>
+    <div class="tablewrap" role="region" aria-label="Sensitivity of supportable capex to tariff and return" tabindex="0"><table class="sens">
+      <thead><tr><th>Gross capex carried, Rs lakh/MWh</th><th>IRR 8%</th><th>IRR 10%</th><th>IRR 12%</th></tr></thead><tbody>
+      <tr><td>Tariff 1.97</td><td>87.5</td><td class="hl">81.5</td><td>76.2</td></tr>
+      <tr><td>Tariff 2.10</td><td>92.4</td><td class="hl">85.9</td><td>80.2</td></tr>
+      <tr><td>Tariff 2.25</td><td>97.9</td><td class="hl">91.0</td><td>84.9</td></tr>
+      <tr><td>Tariff 2.35</td><td>101.6</td><td class="hl">94.4</td><td>88.1</td></tr>
+      </tbody></table></div>
+  </div>
+  <div class="strip plain" style="margin-top:16px"><b>How to read it.</b> Set the figure against the price quoted for a 2-hour turnkey system. The gap between the two is the margin, or the risk, the winner has accepted. A bid decision is that comparison, made before the auction.</div>
+  <p class="src"><b>Assumptions, not from the tender:</b> 95% availability paid; O&amp;M of 1.5% of capex a year, rising 3% a year; one augmentation spend of 5% of capex in year 7; VGF paid 10% at financial closure, 45% at commercial operation and 15% a year for the next three years, as in the government’s earlier BESS VGF scheme, and simplified to start at year 0. Pre-tax, before debt; tax and grid charges ignored. Public sources: <a href="https://www.saurenergy.com/solar-energy-news/nlc-india-renewables-win-265-mw-bess-tender-in-haryana-at-rs-235-lacsmwmonth-12573280">award report, Saur Energy</a>; <a href="https://solarquarter.com/2026/07/27/sjvn-invites-bids-for-265-mw-530-mwh-standalone-bess-project-in-haryana-under-vgf-scheme/">tender terms, SolarQuarter</a>; <a href="https://www.saurenergy.com/solar-energy-news/sjvn-discovers-tariff-of-rs-197-lakhmwmonth-for-its-2-hour-250-mw500-mwh-standalone-bess-tender-11104687">Panipat 250 MW result, Saur Energy</a>; <a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2118325&amp;reg=48&amp;lang=2">VGF scheme, PIB</a>. Illustration only, not advice on any bid.</p>
+</div></section>
+
 <section id="sectors"><div class="wrap">
   <div class="head"><div class="eyebrow">Sectors</div><h2>Where the work has been done, and what each rests on</h2></div>
   <div class="grid g3">
@@ -194,7 +290,28 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
   </div>
 </div></section>
 
-<section id="independence"><div class="wrap">
+<section id="engage"><div class="wrap">
+  <div class="head"><div class="eyebrow">How engagements work</div><h2>Three shapes, and where to start</h2>
+  <p>Fixed fee for the work. A success element only where the outcome is defined and verifiable.</p></div>
+  <div class="grid g3">
+    <div class="card"><h3>Diagnostic</h3><div class="fee">Fixed fee, short</div><ul><li>A tender, supply agreement, offer or draft specification read, with a written opinion</li><li>Delivered as findings, not as a proposal for more work</li></ul></div>
+    <div class="card"><h3>Defined scope</h3><div class="fee">Fixed fee in milestones, plus a fee on the outcome where one is defined</div><ul><li>A bid, an appraisal, a certification programme, a supplier introduction to a bid</li><li>Fee on the order placed or closure achieved; none in bid advisory or assurance</li></ul></div>
+    <div class="card"><h3>Retained</h3><div class="fee">Monthly retainer, or per call-off; fee on orders won where applicable</div><ul><li>A programme carried through: a bid season, an entry route, a manufacturer’s sales support</li><li>Retainer set off against any fee on orders</li></ul></div>
+  </div>
+  <h3 style="margin-top:40px">Most relationships begin with one document and a written opinion on it</h3>
+  <ul class="starts">
+    <li>A tender you are deciding whether to bid</li>
+    <li>A supply agreement or technical offer you are about to accept</li>
+    <li>An appraisal that has to survive being read again in three years</li>
+    <li>A draft regulation or tender document out for comment</li>
+    <li>A plant approaching taking over, or a loss that needs attribution</li>
+    <li>A coal gasification application, or a lender’s appraisal of one</li>
+  </ul>
+  <div class="startbox"><h3>Start with one document</h3><p>Send the tender, agreement, offer or draft you are about to act on, with the decision it feeds and the date you need to decide by. You receive a written opinion at a fixed fee, agreed before any work begins.</p>
+  <div class="cta"><a class="btn" href="mailto:kausik@eikosadvisory.com?subject=Diagnostic%20request&amp;body=Document%20to%20be%20reviewed%3A%0ADecision%20it%20feeds%3A%0ADate%20needed%20by%3A">Send me the document</a><a class="btn ghost" href="https://wa.me/919833945444">WhatsApp</a></div></div>
+</div></section>
+
+<section id="independence" class="alt"><div class="wrap">
   <div class="head"><div class="eyebrow">Independence</div><h2>Stated in advance, because the question will be asked</h2></div>
   <div class="two">
     <div class="card"><h3>Cannot be combined on one project</h3><ul>
@@ -213,31 +330,12 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
   <div class="strip">An opinion is worth what its independence is worth. A practice that will take either side of the same question is selling advocacy, and it should be priced as advocacy.</div>
 </div></section>
 
-<section id="engage" class="alt"><div class="wrap">
-  <div class="head"><div class="eyebrow">How engagements work</div><h2>Three shapes, and where to start</h2>
-  <p>Fixed fee for the work. A success element only where the outcome is defined and verifiable.</p></div>
-  <div class="grid g3">
-    <div class="card"><h3>Diagnostic</h3><div class="fee">Fixed fee, short</div><ul><li>A tender, supply agreement, offer or draft specification read, with a written opinion</li><li>Delivered as findings, not as a proposal for more work</li></ul></div>
-    <div class="card"><h3>Defined scope</h3><div class="fee">Fixed fee in milestones, plus a fee on the outcome where one is defined</div><ul><li>A bid, an appraisal, a certification programme, a supplier introduction to a bid</li><li>Fee on the order placed or closure achieved; none in bid advisory or assurance</li></ul></div>
-    <div class="card"><h3>Retained</h3><div class="fee">Monthly retainer, or per call-off; fee on orders won where applicable</div><ul><li>A programme carried through: a bid season, an entry route, a manufacturer’s sales support</li><li>Retainer set off against any fee on orders</li></ul></div>
-  </div>
-  <h3 style="margin-top:40px">Most relationships begin with one document and a written opinion on it</h3>
-  <ul class="starts">
-    <li>A tender you are deciding whether to bid</li>
-    <li>A supply agreement or technical offer you are about to accept</li>
-    <li>An appraisal that has to survive being read again in three years</li>
-    <li>A draft regulation or tender document out for comment</li>
-    <li>A plant approaching taking over, or a loss that needs attribution</li>
-    <li>A coal gasification application, or a lender’s appraisal of one</li>
-  </ul>
-</div></section>
-
 <div class="contact" id="contact"><div class="wrap">
   <div class="eyebrow">Contact</div>
   <h2 style="margin-top:12px">Kausik Chowdhuri</h2>
   <p style="color:var(--on-navy-mute);margin-top:6px">Principal, Eikos Advisory Services LLP · Ahmedabad</p>
   <div class="row"><span class="mail" id="addr">kausik@eikosadvisory.com</span><button class="copy" id="cp" type="button">Copy address</button></div>
-  <div class="links"><span>98339 45444</span><a href="https://www.linkedin.com/in/kausik-chowdhuri-89508714">LinkedIn</a><a href="https://orcid.org/0009-0001-8271-751X">ORCID</a></div>
+  <div class="links"><a href="tel:+919833945444">98339 45444</a><a href="https://wa.me/919833945444">WhatsApp</a><a href="https://www.linkedin.com/in/kausik-chowdhuri-89508714">LinkedIn</a><a href="https://orcid.org/0009-0001-8271-751X">ORCID</a></div>
 </div></div>
 </main>
 <footer><div class="wrap"><span>© Eikos Advisory Services LLP</span><span>Ahmedabad, India</span></div></footer>
