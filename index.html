@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Eikos Advisory Services LLP: independent advisory on bids, sizing, procurement and assurance for Indian power and infrastructure.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231B2A41'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' font-weight='700' text-anchor='middle' fill='%23E3A867'%3EE%3C/text%3E%3C/svg%3E">
+<title>Eikos Advisory Services LLP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap">
+<style>
+/* Layout: navy hero band, then alternating light sections; one column of reading, grids for lists. */
+:root{
+  --bg:#F4F6F9; --surface:#FFFFFF; --alt:#E9EDF3; --ink:#1B2A41; --muted:#546174; --line:#D4DAE2;
+  --copper:#A9611F; --copper-fill:#C77D33; --navy:#1B2A41; --navy-2:#24364F; --on-navy:#FFFFFF; --on-navy-mute:#C5CDD9; --copper-on-navy:#E3A867;
+  --serif:"Source Serif 4",Cambria,Georgia,serif; --sans:"Source Sans 3",Calibri,"Segoe UI",Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#111A29; --surface:#182338; --alt:#152033; --ink:#E8ECF2; --muted:#A6B1C1; --line:#2A3850;
+  --copper:#E3A867; --copper-fill:#C77D33; --navy:#0C1422; --navy-2:#182338; --on-navy:#FFFFFF; --on-navy-mute:#C5CDD9; --copper-on-navy:#E3A867; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#111A29; --surface:#182338; --alt:#152033; --ink:#E8ECF2; --muted:#A6B1C1; --line:#2A3850;
+  --copper:#E3A867; --copper-fill:#C77D33; --navy:#0C1422; --navy-2:#182338; --on-navy:#FFFFFF; --on-navy-mute:#C5CDD9; --copper-on-navy:#E3A867; color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--sans);-webkit-text-size-adjust:100%}
+a{color:var(--copper);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--copper-fill);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1080px;margin-inline:auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--serif);line-height:1.15;margin:0;text-wrap:balance;font-weight:600}
+h2{font-size:clamp(1.7rem,3.4vw,2.3rem)}
+h3{font-size:1.18rem}
+p{margin:0}
+.eyebrow{font:600 .78rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--copper)}
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--navy);border-bottom:1px solid var(--navy-2)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:56px;flex-wrap:wrap}
+.brand{font:600 1.05rem var(--serif);color:var(--on-navy);text-decoration:none}
+.top nav{display:flex;gap:18px;flex-wrap:wrap}
+.top nav a{color:var(--on-navy-mute);font-size:.92rem;text-decoration:none}
+.top nav a:hover{color:var(--on-navy)}
+/* hero */
+.hero{background:var(--navy);color:var(--on-navy);padding-block:72px 64px}
+.hero .eyebrow{color:var(--copper-on-navy)}
+.hero h1{font-size:clamp(2.3rem,6vw,4rem);margin-top:18px;max-width:16ch}
+.hero .tag{font:italic 500 clamp(1.15rem,2.4vw,1.5rem)/1.4 var(--serif);color:var(--copper-on-navy);margin-top:20px}
+.hero .lead{max-width:60ch;color:var(--on-navy-mute);margin-top:22px;font-size:1.08rem}
+.hero .who{margin-top:34px;padding-top:22px;border-top:1px solid var(--navy-2);display:flex;gap:10px 28px;flex-wrap:wrap;font-size:.98rem;color:var(--on-navy-mute)}
+.hero .who b{color:var(--on-navy);font-weight:600}
+.hero .who a{color:var(--copper-on-navy)}
+/* sections */
+section{padding-block:64px}
+section.alt{background:var(--alt)}
+.head{display:flex;flex-direction:column;gap:10px;margin-bottom:32px;max-width:62ch}
+.head p{color:var(--muted)}
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+.g5{grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr))}
+.card{background:var(--surface);border:1px solid var(--line);padding:22px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.card h3{margin-bottom:2px}
+.card p,.card li{color:var(--muted);font-size:.97rem}
+.card ul{margin:0;padding-left:1.1em;display:flex;flex-direction:column;gap:4px}
+.basis{margin-top:auto;padding-top:10px;font-size:.88rem;font-style:italic;color:var(--copper)}
+.for{margin-top:auto;padding-top:10px;font:600 .8rem var(--sans);letter-spacing:.04em;color:var(--copper)}
+.num{width:30px;height:30px;border-radius:50%;background:var(--copper-fill);color:#fff;font:700 .9rem/30px var(--sans);text-align:center}
+.strip{margin-top:16px;padding:20px 22px;background:var(--navy);color:var(--on-navy);font:italic 500 1.05rem/1.55 var(--serif)}
+.strip.plain{background:var(--surface);color:var(--ink);border:1px solid var(--line);font:400 1rem/1.55 var(--sans)}
+.strip.plain b{font-family:var(--serif)}
+/* table */
+.tablewrap{overflow-x:auto;border:1px solid var(--line);background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:.96rem}
+th,td{text-align:left;padding:13px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--navy);color:var(--on-navy);font-weight:600;font-size:.86rem;letter-spacing:.04em}
+td:first-child{font:600 1rem var(--serif)}
+td:nth-child(2){color:var(--copper);font-weight:600;white-space:nowrap}
+td:nth-child(3){color:var(--muted)}
+tr:last-child td{border-bottom:0}
+/* layers */
+.layers{display:flex;flex-direction:column;gap:10px;margin:0;padding:0;list-style:none}
+.layers li{display:grid;grid-template-columns:auto 150px 1fr;gap:16px;align-items:center;background:var(--navy);color:var(--on-navy);padding:18px 22px}
+.layers .num{flex:none}
+.layers b{font:600 1.15rem var(--serif)}
+.layers span{color:var(--on-navy-mute)}
+@media (max-width:640px){.layers li{grid-template-columns:auto 1fr}.layers li span{grid-column:1/-1}}
+/* record */
+.rec{display:grid;gap:0 32px;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr))}
+.rec div{padding:16px 0;border-bottom:1px solid var(--line);min-width:0}
+.rec h3{font-size:1.05rem}
+.rec p{color:var(--muted);font-size:.93rem;margin-top:4px}
+.rec a{font-size:.93rem;overflow-wrap:anywhere}
+/* independence */
+.two{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr))}
+.two ul{margin:14px 0 0;padding-left:1.1em;display:flex;flex-direction:column;gap:9px}
+.two li{color:var(--ink);font-size:1rem}
+.two .card:last-child li{color:var(--muted);font-size:.96rem}
+/* engagements */
+.fee{font-size:.9rem;font-style:italic;color:var(--copper)}
+.starts{display:grid;gap:8px;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));margin:18px 0 0;padding:0;list-style:none}
+.starts li{background:var(--surface);border:1px solid var(--line);padding:12px 16px;font-size:.97rem}
+/* contact */
+.contact{background:var(--navy);color:var(--on-navy);padding-block:60px}
+.contact h2{color:var(--on-navy)}
+.contact .eyebrow{color:var(--copper-on-navy)}
+.contact .row{margin-top:22px;display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center}
+.mail{font:600 clamp(1.1rem,3vw,1.5rem) var(--serif);color:var(--on-navy);overflow-wrap:anywhere;user-select:all}
+.copy{font:600 .9rem var(--sans);background:transparent;color:var(--on-navy);border:1px solid var(--on-navy-mute);padding:9px 16px;cursor:pointer}
+.copy:hover{background:var(--navy-2)}
+.links{margin-top:20px;display:flex;flex-wrap:wrap;gap:8px 24px;color:var(--on-navy-mute);font-size:.98rem}
+.links a{color:var(--copper-on-navy)}
+footer{background:var(--navy);color:var(--on-navy-mute);border-top:1px solid var(--navy-2);padding-block:22px;font-size:.88rem}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+
+</head><body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="#top">Eikos Advisory Services LLP</a>
+  <nav aria-label="Sections"><a href="#practice">Practice</a><a href="#work">Work</a><a href="#sectors">Sectors</a><a href="#record">Record</a><a href="#independence">Independence</a><a href="#contact">Contact</a></nav>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+  <div class="eyebrow">Independent advisory · Indian power and infrastructure</div>
+  <h1>Contract to number to equipment to evidence</h1>
+  <p class="tag">From the tender document to the plant in operation, every number traced to a clause or a stated assumption.</p>
+  <p class="lead">Eikos Advisory Services LLP advises developers, EPC contractors, lenders and insurers on bids, sizing, procurement and assurance, from a tender document to a plant in operation. Every engagement is led and signed by its principal.</p>
+  <div class="who"><span><b>Kausik Chowdhuri</b>, principal</span><span>Thirty-nine years in the Indian power sector</span><span>Seven published works, open access · <a href="https://orcid.org/0009-0001-8271-751X">ORCID 0009-0001-8271-751X</a></span></div>
+</div></div>
+
+<section id="practice"><div class="wrap">
+  <div class="head"><div class="eyebrow">The practice</div><h2>One principal, two qualifications, named associates by discipline</h2>
+  <p>Mining and process safety, regulatory and appraisal practice, transmission and utility-scale storage.</p></div>
+  <div class="grid g2">
+    <div class="card"><h3>BE Mining, Shibpur · First Class Mine Manager’s Certificate, DGMS</h3><p>A statutory competency. The regime itself is the examined subject, and the duty rests personally on the holder.</p></div>
+    <div class="card"><h3>PGDBA, ICFAI · Third level CFA (India)</h3><p>Costing, appraisal, financial analysis, and the economic side of regulation.</p></div>
+  </div>
+  <div class="tablewrap" style="margin-top:16px" role="region" aria-label="Where each capability was built" tabindex="0">
+  <table><thead><tr><th>Capability</th><th>Discipline</th><th>Where it was built</th></tr></thead><tbody>
+    <tr><td>Contract and risk</td><td>Both</td><td>Kalpataru: Rs 6,500 cr of road and transmission assets, bid to financial close; storage tenders since</td></tr>
+    <tr><td>Sizing and BOQ</td><td>Engineering</td><td>Kalpataru, Advait, KPI Green: transmission, electrolyser and standalone BESS</td></tr>
+    <tr><td>Commercial and decision</td><td>Business</td><td>CRISIL Advisory and KPMG: appraisal and tariff work; five years of road BOT bids, contract to model</td></tr>
+    <tr><td>Procurement support</td><td>Both</td><td>Eastern Coalfields and Kalpataru: specification, enquiry and what contractors deliver against it</td></tr>
+    <tr><td>Performance audit and assurance</td><td>Engineering</td><td>Eastern Coalfields: nine years underground, safety officer and unit manager; three published safety handbooks</td></tr>
+    <tr><td>Policy and regulation</td><td>Both</td><td>DFID regulatory practice, four ADB technical assistance assignments, KPMG</td></tr>
+  </tbody></table></div>
+  <div class="strip">Named associates by discipline (electrical, mechanical, fire, civil, structural) are engaged engagement by engagement and named to the client at the outset. Responsibility for the output stays with Eikos.</div>
+</div></section>
+
+<section id="work" class="alt"><div class="wrap">
+  <div class="head"><div class="eyebrow">What the practice does</div><h2>Five capabilities, in the order a project meets them</h2>
+  <p>The same five serve a developer, an EPC contractor, a lender and an insurer. Each buys a different part of the sequence, and each is told which part is being bought.</p></div>
+  <div class="grid g5">
+    <div class="card"><span class="num">1</span><h3>Contract and risk</h3><ul><li>Obligation register</li><li>Clause-wise risk</li><li>Risk classification</li></ul><div class="for">Developers · EPC</div></div>
+    <div class="card"><span class="num">2</span><h3>Sizing and BOQ</h3><ul><li>Sizing to the interface point</li><li>BOQ on citable codes</li><li>Quantity basis</li></ul><div class="for">Developers · EPC</div></div>
+    <div class="card"><span class="num">3</span><h3>Commercial and decision</h3><ul><li>CMA and financial model</li><li>Bid decision</li><li>Impact and scenario analysis</li></ul><div class="for">Developers · Lenders</div></div>
+    <div class="card"><span class="num">4</span><h3>Procurement support</h3><ul><li>Specification and enquiry</li><li>Offer normalisation</li><li>Evidence gates</li></ul><div class="for">Developers · EPC</div></div>
+    <div class="card"><span class="num">5</span><h3>Performance audit and assurance</h3><ul><li>Requirement-to-evidence</li><li>Graded opinion</li><li>Taking over and attribution</li></ul><div class="for">Lenders · Insurers</div></div>
+  </div>
+  <div class="strip plain"><b>Policy and regulation.</b> Drafting and commentary on regulations, orders and tender documents; tariff and economic regulation; statutory safety regimes. For regulators, ministries and multilateral technical assistance.</div>
+
+  <div class="head" style="margin-top:56px"><div class="eyebrow">A worked example</div><h2>Storage bid to CMA</h2><p>One sector, one engagement type. The layers beneath a bid decision.</p></div>
+  <ol class="layers">
+    <li><span class="num">4</span><b>Decision</b><span>Impact and scenario analysis: every route to the number, with the risk each route carries</span></li>
+    <li><span class="num">3</span><b>Financial</b><span>CMA and the financial model, rooted in the register rather than in a template</span></li>
+    <li><span class="num">2</span><b>Risk</b><span>Clause-cited risk register, classified on bearer, option, mechanism and quantification basis</span></li>
+    <li><span class="num">1</span><b>Cost</b><span>Obligation-derived sizing and BOQ to the interface point, every quantity on a code</span></li>
+  </ol>
+  <div class="strip">Glass box throughout. Every number traces to a clause or to a stated assumption, with a dated record of what it was checked against. What cannot be quantified is marked beside the model, never omitted silently.</div>
+</div></section>
+
+<section id="sectors"><div class="wrap">
+  <div class="head"><div class="eyebrow">Sectors</div><h2>Where the work has been done, and what each rests on</h2></div>
+  <div class="grid g3">
+    <div class="card"><h3>Grid-scale storage</h3><p>Standalone and co-located BESS: tender to CMA, safety assurance, taking over. BESS manufacturing strategy: entry route, technology and supplier selection, certification programme.</p><div class="basis">Advait, KPI Green; three published works</div></div>
+    <div class="card"><h3>Distribution and transmission</h3><p>Utility-scale lines and substations, sanction to commissioning.</p><div class="basis">Kalpataru Power Transmission; Rs 6,500 cr of road and transmission assets</div></div>
+    <div class="card"><h3>Solar</h3><p>Utility-scale and distributed solar, and solar co-located with storage.</p><div class="basis">Freyr Energy; solar-plus-storage sizing</div></div>
+    <div class="card"><h3>Coal, mining and gasification</h3><p>Deep-seam methane drainage and mine safety under a statutory regime. Surface coal and lignite gasification: feedstock assurance, eligible-cost definition, lender-side appraisal.</p><div class="basis">Eastern Coalfields, nine years; published CBM safety handbook</div></div>
+    <div class="card"><h3>Green hydrogen and derivatives</h3><p>Electrolyser sizing against a delivery obligation; ammonia synthesis safety.</p><div class="basis">Advait; published green-ammonia safety work</div></div>
+    <div class="card"><h3>Concession infrastructure</h3><p>Roads on HAM, BOT and TOT. Termination, milestones, annuity mechanics.</p><div class="basis">Kalpataru; five years of road BOT bids</div></div>
+  </div>
+  <div class="strip plain">The contract layer (obligation register, risk classification, coverage) belongs to long-term infrastructure contracts, not to any one sector. The sizing engine is rebuilt per domain.</div>
+</div></section>
+
+<section id="record" class="alt"><div class="wrap">
+  <div class="head"><div class="eyebrow">The published record</div><h2>Seven works, open access and permanent</h2>
+  <p>Citable by anyone, including a tribunal. All records are under ORCID 0009-0001-8271-751X, CC-BY. Concept DOIs are cited, so each link resolves to the current version.</p></div>
+  <div class="rec">
+    <div><h3>Safety Assurance of Grid-Scale Battery Energy Storage Systems</h3><p>63 numbered requirements</p><a href="https://doi.org/10.5281/zenodo.21969460">doi.org/10.5281/zenodo.21969460</a></div>
+    <div><h3>The Graded Audit Opinion in Use</h3><p>One installation, two audits: how a finding moves as the window closes</p><a href="https://doi.org/10.5281/zenodo.21983328">doi.org/10.5281/zenodo.21983328</a></div>
+    <div><h3>Three Findings from Costing a BESS</h3><p>What appears when a plant is priced from the contract rather than from a rate</p><a href="https://doi.org/10.5281/zenodo.21997780">doi.org/10.5281/zenodo.21997780</a></div>
+    <div><h3>Safety Assurance of Deep-Coal Coal Bed Methane Extraction</h3><p>64 numbered requirements</p><a href="https://doi.org/10.5281/zenodo.22094439">doi.org/10.5281/zenodo.22094439</a></div>
+    <div><h3>Safety Assurance of the Green-Ammonia Value Chain</h3><p>Six principles, seven hazards, 47 requirements</p><a href="https://doi.org/10.5281/zenodo.21647611">doi.org/10.5281/zenodo.21647611</a></div>
+    <div><h3>Battery Second-Life Grading and Routing Methodology</h3><p>Grading retired cells for the reuse-or-recycle decision</p><a href="https://doi.org/10.5281/zenodo.21265746">doi.org/10.5281/zenodo.21265746</a></div>
+    <div><h3>Independent Verification, Grading and Two-Way Custody of Second-Life Batteries</h3><p>The custody framework the grading methodology sits inside</p><a href="https://doi.org/10.5281/zenodo.21301195">doi.org/10.5281/zenodo.21301195</a></div>
+  </div>
+</div></section>
+
+<section id="independence"><div class="wrap">
+  <div class="head"><div class="eyebrow">Independence</div><h2>Stated in advance, because the question will be asked</h2></div>
+  <div class="two">
+    <div class="card"><h3>Cannot be combined on one project</h3><ul>
+      <li>Bid advisory to a developer and lender’s appraisal of that same project</li>
+      <li>Drafting a regulation, order or tender document for an authority and advising a party on its response to that same document</li>
+      <li>Advice to a buyer on supplier selection and an undisclosed fee from a supplier under consideration</li>
+      <li>Expert opinion for one party and any prior engagement for the other on the same facts</li></ul></div>
+    <div class="card"><h3>How it is handled</h3><ul>
+      <li>A conflict check before any engagement is accepted, on the project and on the counterparties</li>
+      <li>One side of a project at a time, declared in writing</li>
+      <li>Any fee payable by a third party is disclosed in writing to the client and accepted before it is earned, and is never taken in bid advisory or on an assurance mandate</li>
+      <li>The LLP’s registered objects bar it from manufacturing, supplying, installing, operating or trading in any plant or equipment of a kind it audits, inspects or reports upon</li>
+      <li>No remuneration is linked to the outcome or the findings of any audit</li>
+      <li>Prior work disclosed to a tribunal or a lender without being asked</li></ul></div>
+  </div>
+  <div class="strip">An opinion is worth what its independence is worth. A practice that will take either side of the same question is selling advocacy, and it should be priced as advocacy.</div>
+</div></section>
+
+<section id="engage" class="alt"><div class="wrap">
+  <div class="head"><div class="eyebrow">How engagements work</div><h2>Three shapes, and where to start</h2>
+  <p>Fixed fee for the work. A success element only where the outcome is defined and verifiable.</p></div>
+  <div class="grid g3">
+    <div class="card"><h3>Diagnostic</h3><div class="fee">Fixed fee, short</div><ul><li>A tender, supply agreement, offer or draft specification read, with a written opinion</li><li>Delivered as findings, not as a proposal for more work</li></ul></div>
+    <div class="card"><h3>Defined scope</h3><div class="fee">Fixed fee in milestones, plus a fee on the outcome where one is defined</div><ul><li>A bid, an appraisal, a certification programme, a supplier introduction to a bid</li><li>Fee on the order placed or closure achieved; none in bid advisory or assurance</li></ul></div>
+    <div class="card"><h3>Retained</h3><div class="fee">Monthly retainer, or per call-off; fee on orders won where applicable</div><ul><li>A programme carried through: a bid season, an entry route, a manufacturer’s sales support</li><li>Retainer set off against any fee on orders</li></ul></div>
+  </div>
+  <h3 style="margin-top:40px">Most relationships begin with one document and a written opinion on it</h3>
+  <ul class="starts">
+    <li>A tender you are deciding whether to bid</li>
+    <li>A supply agreement or technical offer you are about to accept</li>
+    <li>An appraisal that has to survive being read again in three years</li>
+    <li>A draft regulation or tender document out for comment</li>
+    <li>A plant approaching taking over, or a loss that needs attribution</li>
+    <li>A coal gasification application, or a lender’s appraisal of one</li>
+  </ul>
+</div></section>
+
+<div class="contact" id="contact"><div class="wrap">
+  <div class="eyebrow">Contact</div>
+  <h2 style="margin-top:12px">Kausik Chowdhuri</h2>
+  <p style="color:var(--on-navy-mute);margin-top:6px">Principal, Eikos Advisory Services LLP · Ahmedabad</p>
+  <div class="row"><span class="mail" id="addr">kausik@eikosadvisory.com</span><button class="copy" id="cp" type="button">Copy address</button></div>
+  <div class="links"><span>98339 45444</span><a href="https://www.linkedin.com/in/kausik-chowdhuri-89508714">LinkedIn</a><a href="https://orcid.org/0009-0001-8271-751X">ORCID</a></div>
+</div></div>
+</main>
+<footer><div class="wrap"><span>© Eikos Advisory Services LLP</span><span>Ahmedabad, India</span></div></footer>
+
+<script>
+(function(){
+  var b=document.getElementById('cp'),a=document.getElementById('addr');
+  b.addEventListener('click',function(){
+    var t=a.textContent;
+    function ok(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy address'},1800)}
+    function sel(){var r=document.createRange();r.selectNodeContents(a);var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected, press copy'}
+    try{navigator.clipboard.writeText(t).then(ok,sel)}catch(e){sel()}
+  });
+})();
+</script>
+
+</body></html>
