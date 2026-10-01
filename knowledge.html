@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Knowledge Centre: analysis from Eikos Advisory Services LLP on policy, regulation, bids and technology in Indian power and storage.">
+<title>Knowledge Centre | Eikos Advisory Services LLP</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231B2A41'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' font-weight='700' text-anchor='middle' fill='%23E3A867'%3EE%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap">
+<style>
+/* Layout: navy hero band, then alternating light sections; one column of reading, grids for lists. */
+:root{
+  --bg:#F4F6F9; --surface:#FFFFFF; --alt:#E9EDF3; --ink:#1B2A41; --muted:#546174; --line:#D4DAE2;
+  --copper:#A9611F; --copper-fill:#C77D33; --navy:#1B2A41; --navy-2:#24364F; --on-navy:#FFFFFF; --on-navy-mute:#C5CDD9; --copper-on-navy:#E3A867;
+  --serif:"Source Serif 4",Cambria,Georgia,serif; --sans:"Source Sans 3",Calibri,"Segoe UI",Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#111A29; --surface:#182338; --alt:#152033; --ink:#E8ECF2; --muted:#A6B1C1; --line:#2A3850;
+  --copper:#E3A867; --copper-fill:#C77D33; --navy:#0C1422; --navy-2:#182338; --on-navy:#FFFFFF; --on-navy-mute:#C5CDD9; --copper-on-navy:#E3A867; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#111A29; --surface:#182338; --alt:#152033; --ink:#E8ECF2; --muted:#A6B1C1; --line:#2A3850;
+  --copper:#E3A867; --copper-fill:#C77D33; --navy:#0C1422; --navy-2:#182338; --on-navy:#FFFFFF; --on-navy-mute:#C5CDD9; --copper-on-navy:#E3A867; color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--sans);-webkit-text-size-adjust:100%}
+a{color:var(--copper);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--copper-fill);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1080px;margin-inline:auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--serif);line-height:1.15;margin:0;text-wrap:balance;font-weight:600}
+h2{font-size:clamp(1.7rem,3.4vw,2.3rem)}
+h3{font-size:1.18rem}
+p{margin:0}
+.eyebrow{font:600 .78rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--copper)}
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--navy);border-bottom:1px solid var(--navy-2)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:56px;flex-wrap:wrap}
+.brand{font:600 1.05rem var(--serif);color:var(--on-navy);text-decoration:none}
+.top nav{display:flex;gap:18px;flex-wrap:wrap}
+.top nav a{color:var(--on-navy-mute);font-size:.92rem;text-decoration:none}
+.top nav a:hover{color:var(--on-navy)}
+/* hero */
+.hero{background:var(--navy);color:var(--on-navy);padding-block:72px 64px}
+.hero .eyebrow{color:var(--copper-on-navy)}
+.hero h1{font-size:clamp(2.3rem,6vw,4rem);margin-top:18px;max-width:16ch}
+.hero .tag{font:italic 500 clamp(1.15rem,2.4vw,1.5rem)/1.4 var(--serif);color:var(--copper-on-navy);margin-top:20px}
+.hero .lead{max-width:60ch;color:var(--on-navy-mute);margin-top:22px;font-size:1.08rem}
+.hero .who{margin-top:34px;padding-top:22px;border-top:1px solid var(--navy-2);display:flex;gap:10px 28px;flex-wrap:wrap;font-size:.98rem;color:var(--on-navy-mute)}
+.hero .who b{color:var(--on-navy);font-weight:600}
+.hero .who a{color:var(--copper-on-navy)}
+/* sections */
+section{padding-block:64px}
+section.alt{background:var(--alt)}
+.head{display:flex;flex-direction:column;gap:10px;margin-bottom:32px;max-width:62ch}
+.head p{color:var(--muted)}
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+.g5{grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr))}
+.card{background:var(--surface);border:1px solid var(--line);padding:22px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.card h3{margin-bottom:2px}
+.card p,.card li{color:var(--muted);font-size:.97rem}
+.card ul{margin:0;padding-left:1.1em;display:flex;flex-direction:column;gap:4px}
+.basis{margin-top:auto;padding-top:10px;font-size:.88rem;font-style:italic;color:var(--copper)}
+.for{margin-top:auto;padding-top:10px;font:600 .8rem var(--sans);letter-spacing:.04em;color:var(--copper)}
+.num{width:30px;height:30px;border-radius:50%;background:var(--copper-fill);color:#fff;font:700 .9rem/30px var(--sans);text-align:center}
+.strip{margin-top:16px;padding:20px 22px;background:var(--navy);color:var(--on-navy);font:italic 500 1.05rem/1.55 var(--serif)}
+.strip.plain{background:var(--surface);color:var(--ink);border:1px solid var(--line);font:400 1rem/1.55 var(--sans)}
+.strip.plain b{font-family:var(--serif)}
+/* table */
+.tablewrap{overflow-x:auto;border:1px solid var(--line);background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:.96rem}
+th,td{text-align:left;padding:13px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--navy);color:var(--on-navy);font-weight:600;font-size:.86rem;letter-spacing:.04em}
+td:first-child{font:600 1rem var(--serif)}
+td:nth-child(2){color:var(--copper);font-weight:600;white-space:nowrap}
+td:nth-child(3){color:var(--muted)}
+tr:last-child td{border-bottom:0}
+/* layers */
+.layers{display:flex;flex-direction:column;gap:10px;margin:0;padding:0;list-style:none}
+.layers li{display:grid;grid-template-columns:auto 150px 1fr;gap:16px;align-items:center;background:var(--navy);color:var(--on-navy);padding:18px 22px}
+.layers .num{flex:none}
+.layers b{font:600 1.15rem var(--serif)}
+.layers span{color:var(--on-navy-mute)}
+@media (max-width:640px){.layers li{grid-template-columns:auto 1fr}.layers li span{grid-column:1/-1}}
+/* record */
+.rec{display:grid;gap:0 32px;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr))}
+.rec div{padding:16px 0;border-bottom:1px solid var(--line);min-width:0}
+.rec h3{font-size:1.05rem}
+.rec p{color:var(--muted);font-size:.93rem;margin-top:4px}
+.rec a{font-size:.93rem;overflow-wrap:anywhere}
+/* independence */
+.two{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr))}
+.two ul{margin:14px 0 0;padding-left:1.1em;display:flex;flex-direction:column;gap:9px}
+.two li{color:var(--ink);font-size:1rem}
+.two .card:last-child li{color:var(--muted);font-size:.96rem}
+/* engagements */
+.fee{font-size:.9rem;font-style:italic;color:var(--copper)}
+.starts{display:grid;gap:8px;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));margin:18px 0 0;padding:0;list-style:none}
+.starts li{background:var(--surface);border:1px solid var(--line);padding:12px 16px;font-size:.97rem}
+/* contact */
+.contact{background:var(--navy);color:var(--on-navy);padding-block:60px}
+.contact h2{color:var(--on-navy)}
+.contact .eyebrow{color:var(--copper-on-navy)}
+.contact .row{margin-top:22px;display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center}
+.mail{font:600 clamp(1.1rem,3vw,1.5rem) var(--serif);color:var(--on-navy);overflow-wrap:anywhere;user-select:all}
+.copy{font:600 .9rem var(--sans);background:transparent;color:var(--on-navy);border:1px solid var(--on-navy-mute);padding:9px 16px;cursor:pointer}
+.copy:hover{background:var(--navy-2)}
+.links{margin-top:20px;display:flex;flex-wrap:wrap;gap:8px 24px;color:var(--on-navy-mute);font-size:.98rem}
+.links a{color:var(--copper-on-navy)}
+footer{background:var(--navy);color:var(--on-navy-mute);border-top:1px solid var(--navy-2);padding-block:22px;font-size:.88rem}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px}
+/* v2 additions */
+.cta{margin-top:28px;display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;font:600 1rem var(--sans);padding:13px 22px;text-decoration:none;background:var(--copper-fill);color:#1B2A41;border:1px solid var(--copper-fill)}
+.btn:hover{background:var(--copper-on-navy)}
+.btn.ghost{background:transparent;color:var(--on-navy);border-color:var(--on-navy-mute)}
+.btn.ghost:hover{background:var(--navy-2)}
+.btn.dark{background:var(--navy);color:var(--on-navy);border-color:var(--navy)}
+.stats{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr))}
+.stat{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--copper-fill);padding:20px 18px;min-width:0}
+.stat b{display:block;font:700 clamp(1.5rem,3.2vw,1.9rem)/1.15 var(--serif);color:var(--ink)}
+.stat span{display:block;margin-top:8px;color:var(--muted);font-size:.93rem}
+.note{margin-top:14px;font-size:.88rem;color:var(--muted)}
+.qs{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr))}
+.q{background:var(--surface);border:1px solid var(--line);padding:20px 22px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.q h3{font-size:1.12rem}
+.q p{color:var(--muted);font-size:.95rem}
+.q .for{margin-top:auto}
+.startbox{margin-top:28px;padding:26px 24px;background:var(--navy);color:var(--on-navy)}
+.startbox h3{color:var(--on-navy);font-size:1.4rem}
+.startbox p{color:var(--on-navy-mute);margin-top:8px;max-width:62ch}
+.bio{margin-top:16px}
+.ex{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));align-items:start}
+.ex table{min-width:0}
+.ex td:nth-child(2){color:var(--ink);white-space:nowrap;text-align:right;font-weight:600}
+.ex th:nth-child(2){text-align:right}
+.ex tr.tot td{background:var(--alt);font-weight:700}
+.ex td:first-child{font:400 .96rem var(--sans)}
+.ex tr.tot td:first-child{font-weight:700}
+.sens td,.sens th{text-align:right}
+.sens td:first-child,.sens th:first-child{text-align:left}
+.sens td:nth-child(2){color:var(--ink);font-weight:400;white-space:normal}
+.sens td:nth-child(n){color:var(--ink)}
+.sens td:first-child{font:600 .96rem var(--sans)}
+.sens td.hl{background:var(--alt);font-weight:700}
+.src{font-size:.88rem;color:var(--muted);margin-top:14px}
+.src a{overflow-wrap:anywhere}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.note-list{display:flex;flex-direction:column;gap:14px}
+.post{background:var(--surface);border:1px solid var(--line);padding:26px 24px}
+.post h1{font-size:clamp(1.6rem,4vw,2.3rem);margin-top:10px}
+.meta{margin-top:10px;font-size:.9rem;color:var(--muted)}
+.tag2{display:inline-block;font:600 .75rem var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--copper);border:1px solid var(--line);padding:3px 8px;margin-right:6px}
+.post h2{font-size:1.35rem;margin-top:30px}
+.post p{margin-top:12px;color:var(--ink)}
+.post ul{margin:12px 0 0;padding-left:1.2em;display:flex;flex-direction:column;gap:8px}
+.post li{color:var(--ink)}
+.post li b{font-family:var(--serif)}
+.post .tablewrap{margin-top:16px}
+.post table{min-width:0}
+.post td:first-child{font:400 .97rem var(--sans)}
+.post td:nth-child(2){color:var(--ink);font-weight:600;text-align:right;white-space:nowrap}
+.post th:nth-child(2){text-align:right}
+.post td:nth-child(3){color:var(--muted);font-size:.9rem}
+.post tr.d td:first-child{font-style:italic}
+.fine{margin-top:26px;padding-top:16px;border-top:1px solid var(--line);font-size:.88rem;color:var(--muted)}
+
+.kc-nav{position:sticky;top:56px;z-index:4;background:var(--bg);border-bottom:1px solid var(--line)}
+.kc-nav .wrap{display:flex;flex-wrap:wrap;gap:8px;padding-block:10px}
+.kc-nav a{font:600 .9rem var(--sans);text-decoration:none;color:var(--ink);border:1px solid var(--line);background:var(--surface);padding:7px 14px}
+.kc-nav a:hover{border-color:var(--copper)}
+.kc-sec{padding-block:44px 8px}
+.kc-sec .eyebrow{margin-bottom:8px}
+.sub{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:18px}
+.post .stats{margin-top:16px}
+.post .tablewrap td:nth-child(n+2){white-space:normal}
+.post .tablewrap.w td:nth-child(n+2){white-space:nowrap}
+.srcs{margin:10px 0 0;padding-left:1.1em;font-size:.88rem;color:var(--muted)}
+.srcs li{color:var(--muted);overflow-wrap:anywhere}
+</style>
+</head><body>
+<header class="top"><div class="wrap"><a class="brand" href="index.html">Eikos Advisory Services LLP</a><nav aria-label="Sections"><a href="index.html#results">Results</a><a href="index.html#questions">Questions</a><a href="index.html#work">Work</a><a href="index.html#example">Example</a><a href="index.html#engage">Start</a><a href="knowledge.html">Knowledge Centre</a><a href="index.html#contact">Contact</a></nav></div></header>
+<main>
+<section style="padding-block:40px 12px"><div class="wrap">
+  <div class="head"><div class="eyebrow">Knowledge Centre</div><h2>Policy, regulation, bids and technology</h2>
+  <p>Analysis of public developments in Indian power and storage, with the reading for each part of the value chain. Every figure is sourced, and every derived number shows its basis.</p></div>
+  <div class="sub"><a class="btn dark" href="mailto:kausik@eikosadvisory.com?subject=Subscribe%20to%20Eikos%20Knowledge%20Centre&amp;body=Name%3A%0AOrganisation%3A%0ATopics%20(Policy%2C%20Regulation%2C%20Bids%2C%20Technology)%3A">Subscribe</a><a class="btn ghost" style="color:var(--ink);border-color:var(--line)" href="https://www.linkedin.com/in/kausik-chowdhuri-89508714">Follow on LinkedIn</a></div>
+</div></section>
+<div class="kc-nav"><div class="wrap"><a href="#gec3">Policy</a><a href="#merc">Regulation</a><a href="#bids">Bids</a><a href="#gh2">Technology</a></div></div>
+<section class="kc-sec" id="policy-sec"><div class="wrap"><div class="eyebrow">Policy</div><article class="post" id="gec3"><div><span class="tag2">Policy</span><span class="tag2">Storage</span><span class="tag2">Transmission</span></div><h1>Green Energy Corridor Phase-III: storage joins the transmission plan</h1><div class="meta">Kausik Chowdhuri · 1 October 2026 · Based on the PIB release of 30 September 2026</div>
+<h2>What was approved</h2>
+<ul>
+<li>Green Energy Corridor Phase-III (GEC-III): intra-State transmission to evacuate up to <b>135 GW</b> of renewable energy, and <b>50 GWh</b> of battery storage at the RE developer end or other locations of grid importance.</li>
+<li>Target: <b>FY 2032-33</b>. Total outlay <b>Rs 1,86,405 crore</b>, with Central Financial Support of <b>Rs 54,082 crore</b>.</li>
+<li>Greenfield transmission goes by tariff-based competitive bidding on a BOOM model, with State Transmission Utilities as implementing agencies. Brownfield strengthening is on cost-plus.</li>
+</ul>
+<h2>The numbers, read together</h2>
+<div class="tablewrap" role="region" aria-label="GEC-III headline figures and derived ratios" tabindex="0"><table>
+<thead><tr><th>Item</th><th>Value</th><th>Basis</th></tr></thead><tbody>
+<tr><td>Intra-State transmission outlay</td><td>Rs 1,36,378 cr</td><td>PIB release</td></tr>
+<tr><td>Battery storage outlay</td><td>Rs 50,000 cr</td><td>PIB release</td></tr>
+<tr><td>Central Financial Support</td><td>Rs 54,082 cr</td><td>PIB release</td></tr>
+<tr class="d"><td>Central support as a share of total outlay</td><td>29%</td><td>Derived: 54,082 / 1,86,405</td></tr>
+<tr class="d"><td>Storage outlay per MWh</td><td>Rs 100 lakh</td><td>Derived: Rs 50,000 cr / 50,000 MWh</td></tr>
+<tr class="d"><td>Transmission outlay per MW evacuated</td><td>Rs 1.0 cr</td><td>Derived: Rs 1,36,378 cr / 1,35,000 MW</td></tr>
+</tbody></table></div>
+<p style="font-size:.93rem;color:var(--muted)">Two cautions. The release does not say how the central support divides between transmission and storage. And the two components add to Rs 1,86,378 crore, Rs 27 crore less than the stated total; the release does not explain the difference. The per-unit figures are arithmetic on headline numbers, not scheme parameters.</p>
+<p>One cross-check is worth making. Storage outlay of about Rs 100 lakh/MWh sits in the same range as the gross capex that the recent SJVN Haryana tariff can carry, about Rs 94 lakh/MWh on stated assumptions (see the Bids article below). The scheme’s planning figure and recent auction outcomes are not far apart.</p>
+<h2>What it means, by segment</h2>
+<ul>
+<li><b>State utilities and DISCOMs.</b> Central support offsets intra-State transmission charges, so the benefit reaches consumers through lower charges, not through lower generation cost. Execution capacity at State Transmission Utilities is likely to be the constraint.</li>
+<li><b>Transmission developers and EPC contractors.</b> A State-level TBCB pipeline tied to 135 GW of evacuation. Bids will be tariff-driven and competitive; the winners are likely to be those who price construction, right-of-way and delay risk correctly.</li>
+<li><b>RE developers.</b> Storage can be placed at the generator end, which favours co-located solar-plus-storage and eases curtailment and non-solar-hour supply. The value depends on how storage is paid.</li>
+<li><b>Storage integrators and manufacturers.</b> 50 GWh by FY 2032-33 is a large, visible demand signal. The release mentions domestic manufacturing employment but gives no domestic-content or supplier conditions; those will decide who benefits.</li>
+<li><b>Lenders.</b> Central support reduces tariff and offtake risk, but lenders will still want a clear payment structure for storage and a realistic view of State utility credit.</li>
+<li><b>Assurance, insurers and regulators.</b> Fifty GWh spread over many States means many new installations under different owners. Safety standards, audit practice and incident attribution need to be in place before the build-out, not after.</li>
+</ul>
+<h2>What the release does not say, and why it matters</h2>
+<ul>
+<li>How storage will be procured, and who the buyer and contracting agency will be.</li>
+<li>The support per MWh for storage, its cap, and how and when it is paid.</li>
+<li>Domestic-content rules, eligible technologies and duration.</li>
+<li>Timelines for first tenders, and how transmission and storage tenders will be sequenced.</li>
+</ul>
+<p>These answers will matter more than the headline figures. Developers and suppliers should treat the scheme guidelines, not the press release, as the basis for bid planning.</p>
+<h2>Our view</h2>
+<ul>
+<li>The scheme confirms that storage is now part of the transmission plan, not an add-on to generation.</li>
+<li>The first test is tender design. Support that is certain, timely and clearly specified will bring tighter bids; support that is conditional will be priced as risk.</li>
+<li>Every stage of the chain depends on the same discipline: trace each number to a clause or an assumption before committing to a bid or an investment.</li>
+</ul><div class="fine"><b>Sources</b><ul class="srcs"><li><a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2316948">Press Information Bureau, Cabinet approves Green Energy Corridor Phase-III, 30 September 2026 (Release ID 2316948)</a></li></ul><p style="margin-top:12px">Derived figures and views are those of the author, prepared from public information only. Not advice on any bid or investment.</p></div></article></div></section>
+<section class="kc-sec" id="regulation-sec"><div class="wrap"><div class="eyebrow">Regulation</div><article class="post" id="merc"><div><span class="tag2">Regulation</span><span class="tag2">Storage</span><span class="tag2">Maharashtra</span></div><h1>Maharashtra’s draft storage rules: storage becomes the price of grid access, and safety is left to others</h1><div class="meta">Kausik Chowdhuri · 1 October 2026 · Based on the MERC draft regulations and Explanatory Memorandum of 22 September 2026</div>
+<h2>What MERC has proposed</h2>
+<p>The Maharashtra Electricity Regulatory Commission has published seven draft regulations to put the State’s Renewable Energy and Energy Storage Policy, 2025-26 to 2035-36 into force. The policy aims for renewables to meet 50% of demand by FY 2029-30 and 65% by FY 2035-36, and for distribution licensees to hold storage equal to at least 10% of demand by FY 2035-36, with at least 85% of stored energy from renewable sources. Its planning assumption is about 100 GW of renewables and 20 GW / 100 GWh of storage by FY 2035-36. This note covers the storage provisions in the Battery Energy Storage Systems draft and the connectivity draft.</p>
+<div class="tablewrap" role="region" aria-label="Key storage provisions in the MERC drafts" tabindex="0"><table>
+<thead><tr><th>Provision</th><th>What the draft says</th></tr></thead><tbody>
+<tr><td>Storage tied to connectivity</td><td>Minimum usable storage of 1 MWh per MW of sanctioned connectivity for applications up to 2030, and 2 MWh per MW after</td></tr>
+<tr><td>Standalone BESS size</td><td>At least 5 MW at the intra-State transmission system, and 1 MW at distribution; aggregation allowed</td></tr>
+<tr><td>Standalone BESS duration</td><td>At least 2 hours, to be reviewed by the Commission; projects at financial closure or under construction are deemed compliant</td></tr>
+<tr><td>Charges on energy stored</td><td>Exempt from transmission, demand, wheeling and cross-subsidy charges, provided the stored energy is consumed within Maharashtra</td></tr>
+<tr><td>Procurement</td><td>Competitive bidding under Section 63 preferred, including availability-based battery-as-a-service; Section 62 only in exceptional cases with prior approval</td></tr>
+<tr><td>Safety (Regulation 16)</td><td>One paragraph requiring compliance with standards and statutory requirements of CEA, BIS, the Ministry of Power and other authorities</td></tr>
+</tbody></table></div>
+<h2>Three things the drafts do</h2>
+<ul>
+<li><b>They make storage a condition of access, not a choice.</b> A 100 MW solar connectivity would carry a minimum of 100 MWh of usable storage to 2030. At the capex-equivalent of about Rs 94 lakh/MWh that the recent SJVN Haryana tariff supports on stated assumptions (see the Bids article), that is on the order of Rs 94 crore that belongs in the project’s bid, not its footnote. This is an illustration, not a cost estimate.</li>
+<li><b>They standardise a two-hour product.</b> The 2-hour minimum for standalone storage matches what recent tenders have bought. But the policy’s own planning figures, 100 GWh over 20 GW, imply an average of five hours. The regulations set a floor well below that average, and leave the Commission to revise it.</li>
+<li><b>They give the exemption and the market opening different conditions.</b> Standalone storage may undertake inter-State sale, but the charge exemption applies only if the stored energy is consumed within Maharashtra. A project that sells outside the State should price in the charges.</li>
+</ul>
+<h2>What the BESS draft leaves open</h2>
+<p>Safety, audit and incident handling are the thin part. In the BESS draft itself, safety is one paragraph that defers to other authorities. Regulation 17 requires owners to maintain records and undertake inspections, testing and audits “as required under applicable standards”, but the draft does not say which standard, who may audit, or what independence is required. The draft contains no provision for reporting incidents. A regime that connects many new installations to the grid needs these, and the Commission has the power to ask for them.</p>
+<h2>What it means, by segment</h2>
+<ul>
+<li><b>Renewable developers.</b> Budget storage into every new connectivity application, and track which access category (solar-hour, non-solar-hour, full-day) the storage supports.</li>
+<li><b>Standalone developers.</b> A regulatory home at last: a distinct asset class, with connectivity, metering and charge exemption defined. The fine print on conditions and inter-State sale will set the revenue model.</li>
+<li><b>Distribution licensees.</b> Storage obligations and procurement route become explicit, with competitive bidding as the default.</li>
+<li><b>Suppliers and integrators.</b> A State-mandated minimum creates steady demand, but the draft sets no local-content or equipment condition; that stays with procurement documents.</li>
+<li><b>Lenders and insurers.</b> Sharper definitions of “usable storage” and of compliance will matter; so will a named standard for audits.</li>
+</ul>
+<h2>Points worth commenting on</h2>
+<ul>
+<li>How “usable storage” is defined, measured and verified over the project’s life.</li>
+<li>Whether a 2-hour floor, and a 2 MWh per MW rule after 2030, suit the system needs the policy describes.</li>
+<li>Whether the charge exemption should follow the State of consumption or the State of charging.</li>
+<li>A specified safety and audit framework, with independent verification and incident reporting.</li>
+</ul>
+<h2>Our view</h2>
+<p>Maharashtra is writing storage into the rules of grid access, and other States will watch. The design is sound in intent. Its weakest link is verification: a mandate for storage is worth what the evidence that the storage performs is worth. The draft is where that evidence should be specified.</p>
+<p style="font-size:.93rem;color:var(--muted)">The comment deadline and hearing dates are in MERC’s public notice, which this note does not reproduce; it should be checked before any filing.</p><div class="fine"><b>Sources</b><ul class="srcs"><li>Maharashtra Electricity Regulatory Commission, Draft Battery Energy Storage Systems Regulations, 2026 (draft notification)</li><li>Maharashtra Electricity Regulatory Commission, Explanatory Memorandum on the proposed amendments to implement the Maharashtra Renewable Energy and Energy Storage Policy, 2025-26 to 2035-36, 22 September 2026</li></ul><p style="margin-top:12px">Derived figures and views are those of the author, prepared from public information only. Not advice on any bid or investment.</p></div></article></div></section>
+<section class="kc-sec" id="bidsec"><div class="wrap"><div class="eyebrow">Bids</div><article class="post" id="bids"><div><span class="tag2">Bids</span><span class="tag2">Storage</span><span class="tag2">Tariffs</span></div><h1>A tariff is a capex statement: reading five Indian storage auctions backwards</h1><div class="meta">Kausik Chowdhuri · 1 October 2026 · Based on published auction results</div>
+<h2>The series</h2>
+<p>Five recent standalone storage auctions, all for two-hour systems, with a fixed viability gap funding (VGF) of Rs 18 lakh/MWh where reported, cleared at very different tariffs over ten months.</p>
+<div class="tablewrap w" role="region" aria-label="Recent standalone BESS auction results and the capex each supports" tabindex="0"><table>
+<thead><tr><th>Auction</th><th>Reported</th><th>L1 tariff, Rs lakh/MW/month</th><th>Capex it supports at 10% IRR, Rs lakh/MWh</th><th>Range at 8% to 12%</th></tr></thead><tbody>
+<tr><td>GUVNL 2 GW / 4 GWh</td><td>Nov 2025</td><td>1.85</td><td>77.4</td><td>72.4 to 83.1</td></tr>
+<tr><td>SJVN Panipat 250 MW / 500 MWh</td><td>Feb 2026</td><td>1.97</td><td>81.5</td><td>76.2 to 87.5</td></tr>
+<tr><td>GUVNL 335 MW / 670 MWh</td><td>Feb 2026</td><td>2.10</td><td>85.9</td><td>80.2 to 92.4</td></tr>
+<tr><td>GUVNL 450 MW / 900 MWh</td><td>Aug 2026</td><td>2.32</td><td>93.4</td><td>87.1 to 100.5</td></tr>
+<tr><td>SJVN Haryana 265 MW / 530 MWh</td><td>Sep 2026</td><td>2.35</td><td>94.4</td><td>88.1 to 101.6</td></tr>
+</tbody></table></div>
+<p style="font-size:.93rem;color:var(--muted)">The right-hand columns are derived, not reported. Assumptions: 12-year term, 95% availability, O&amp;M of 1.5% of capex a year rising 3%, one augmentation spend of 5% of capex in year 7, VGF of Rs 18 lakh/MWh received 10% at financial closure, 45% at commercial operation and 15% a year for three years after, pre-tax, before debt, no tax or grid charges. The 12-year term is reported for the two latest auctions and assumed for the others.</p>
+<h2>What reading it backwards shows</h2>
+<ul>
+<li><b>Tariffs rose 27%; the capex they support rose 22%.</b> From Rs 1.85 to Rs 2.35 lakh/MW/month is a rise of 27%. On the assumptions above, the capex those tariffs can carry rose from about Rs 77 to Rs 94 lakh/MWh, a rise of Rs 17 lakh/MWh. The VGF is fixed, so the tariff has to move by more than the capex it covers.</li>
+<li><b>A rule of thumb.</b> On the same assumptions, each Rs 0.10 lakh/MW/month of tariff corresponds to about Rs 3.4 lakh/MWh of supportable capex. A bidder can turn a supplier’s quote into a tariff, and a tariff into a quote, on the same basis.</li>
+<li><b>The series is not a clean trend.</b> Panipat cleared at Rs 1.97 in the same month as a GUVNL auction at Rs 2.10. The tenders differ in terms. The two later GUVNL tenders are reported to carry a 20% local-content minimum and, in one, an indigenous energy-management software requirement; the author has not verified whether the November 2025 tender did. Availability (95%), daily cycles and site conditions also vary.</li>
+</ul>
+<h2>What public data cannot show</h2>
+<p>The figures show that supportable capex has risen. They do not show why. Equipment prices, local-content cost, financing cost and bidding behaviour could each contribute, and the auction results do not separate them. That is the honest limit of reading a tariff backwards: it gives a number to test a quote against, not an explanation.</p>
+<h2>What it means, by segment</h2>
+<ul>
+<li><b>Bidders.</b> Convert every equipment quote into a tariff on stated assumptions of their own before the auction, and know which assumption moves the answer most.</li>
+<li><b>Buyers and States.</b> With support per MWh fixed, a rising tariff is a rising burden on consumers; the support design matters as much as the auction design.</li>
+<li><b>Suppliers.</b> Local-content and software rules may show up in the price of a winning bid; quote on the basis the tender specifies.</li>
+<li><b>Lenders.</b> A tariff that is a capex statement is also a check: compare the supported capex with the project’s budget and ask who carries the gap.</li>
+</ul>
+<h2>Our view</h2>
+<p>A winning tariff is the market’s answer to one question: what capex, under these terms, earns the required return? Read that way, the tariff is also a test of the next quote. The discipline is to keep the answer on a stated basis so that auctions can be compared.</p>
+<p style="font-size:.88rem;color:var(--muted)"><b>Disclosure.</b> The author was previously employed by Advait Energy Transitions and by KPI Green Energy, whose subsidiaries took part in some of the auctions above. All figures here come from public reports.</p><div class="fine"><b>Sources</b><ul class="srcs"><li><a href="https://www.ess-news.com/2025/11/18/indias-4-gwh-standalone-battery-storage-tender-yields-tariffs-of-2220-2268-mw-month/">ESS News, GUVNL 2 GW / 4 GWh auction, 18 November 2025</a></li><li><a href="https://www.saurenergy.com/solar-energy-news/sjvn-discovers-tariff-of-rs-197-lakhmwmonth-for-its-2-hour-250-mw500-mwh-standalone-bess-tender-11104687">Saur Energy, SJVN Panipat 250 MW / 500 MWh result</a></li><li><a href="https://solarquarter.com/2026/02/12/advait-energy-transitions-equentia-natural-resources-dmcc-and-sun-drop-energia-win-guvnls-335-mw-bess-auction-in-gujarat/">SolarQuarter, GUVNL 335 MW / 670 MWh auction, 12 February 2026</a></li><li><a href="https://www.pv-magazine-india.com/2026/08/11/guvnl-discovers-inr-2-32-lakh-mw-month-tariff-in-450-mw-900-mwh-bess-tender/">pv magazine India, GUVNL 450 MW / 900 MWh auction, 11 August 2026</a></li><li><a href="https://www.saurenergy.com/solar-energy-news/nlc-india-renewables-win-265-mw-bess-tender-in-haryana-at-rs-235-lacsmwmonth-12573280">Saur Energy, SJVN Haryana 265 MW / 530 MWh award</a></li></ul><p style="margin-top:12px">Derived figures and views are those of the author, prepared from public information only. Not advice on any bid or investment.</p></div></article></div></section>
+<section class="kc-sec" id="techsec"><div class="wrap"><div class="eyebrow">Technology</div><article class="post" id="gh2"><div><span class="tag2">Technology</span><span class="tag2">Green hydrogen</span></div><h1>Green hydrogen in India: the gap between allocation and commissioning is an interface problem</h1><div class="meta">Kausik Chowdhuri · 1 October 2026 · Based on published mission and market data</div>
+<h2>The gap</h2>
+<div class="stats">
+<div class="stat"><b>8.62 lakh t/yr</b><span>production capacity incentivised under SIGHT</span></div>
+<div class="stat"><b>about 8,000 to 11,000 t/yr</b><span>reported as commissioned or operating, depending on source and date</span></div>
+<div class="stat"><b>6.7 lakh t/yr</b><span>green ammonia supply agreements with 11 fertiliser plants</span></div>
+<div class="stat"><b>30,000 t/yr</b><span>refinery hydrogen awarded, at Rs 279/kg in one tender</span></div>
+</div>
+<p style="font-size:.93rem;color:var(--muted)">Incentivised capacity, awards and supply agreements come from the Ministry of New and Renewable Energy statements of 24 September 2026. The operating figure is a range from two reports: about 8,000 tonnes a year (Business Today, June 2026) and 11,329 tonnes a year (S&amp;P Global data, cited by Moody’s). Against 8.62 lakh tonnes, that is roughly 1% to 1.3%, the author’s arithmetic. A pipeline of over 6 million tonnes a year and about 113,000 tonnes financed are also reported.</p>
+<p>Published commentary gives familiar reasons: offtake certainty, financing, infrastructure, and cost. Those are real. This note adds one that shows up in the gap between awarded and operating: the plant is a chain of interfaces, and each one needs an owner.</p>
+<h2>The four interfaces</h2>
+<ul>
+<li><b>Power to electrolyser.</b> Renewable power varies by the hour; an electrolyser has an operating window. A performance guarantee is only as good as the operating profile it assumes, and a real renewable profile is rarely the profile in the guarantee. Who owns the difference?</li>
+<li><b>Gas to user.</b> The hydrogen leaving the plant must meet the specification the user needs: purity, oxygen, moisture. A refinery unit and an ammonia synthesis loop tolerate different impurities, and trace oxygen matters more in some. Which party warrants the gas at the delivery point, and where is it tested?</li>
+<li><b>Variable production to steady demand.</b> A buffer between a variable electrolyser and a steady consumer decides both the economics and the hazard. Its size is a trade-off between cost, ramp and inventory, and it is often decided late.</li>
+<li><b>Obligation to evidence.</b> Hazardous-area classification, materials for hydrogen service and statutory approvals sit with different authorities and different contractors. An obligation that every party assumes another holds is the most dangerous kind.</li>
+</ul>
+<h2>Why this matters for the gap</h2>
+<p>An allocation and an offtake agreement are contract-level facts: tonnes, price, date. Commissioning is an interface-level fact: each interface works, is tested, and has a named owner. Lenders can finance certainty on contracts. They cannot finance an interface nobody owns. The result is that projects with awards and supply agreements still stall between financial close and first hydrogen. The published figures show the size of the gap, not its cause; this is the author’s reading, and it sits alongside cost and demand, not in place of them.</p>
+<h2>What to do about it</h2>
+<ul>
+<li><b>Write an interface register</b> before financial close: for each interface, the owner, the specification, the test and the evidence.</li>
+<li><b>Set evidence gates</b> at the interfaces in the project contracts, with commissioning tests that measure the interface, not only the equipment.</li>
+<li><b>Verify independently</b> where a party is marking its own work.</li>
+</ul>
+<h2>What it means, by segment</h2>
+<ul>
+<li><b>Developers.</b> Offtake is necessary but not sufficient; the interface register is what turns an award into an operating plant.</li>
+<li><b>Electrolyser makers and EPC contractors.</b> Guarantees tied to a stated operating profile will meet real profiles; say so in the contract and price it.</li>
+<li><b>Offtakers: refineries and fertiliser plants.</b> The gas specification is an input to the design, and it needs to be stated early.</li>
+<li><b>Lenders and insurers.</b> Ask for the interface register and for evidence that each item has been tested.</li>
+<li><b>Policy makers and standard setters.</b> Mission tracking that follows operating capacity, not only awards, would show where projects stall.</li>
+</ul>
+<h2>Our view</h2>
+<p>The next year’s commissioning record will depend less on the price of electrolysers than on whether each interface has an owner and a test. The same obligation-to-evidence discipline that applies to battery storage applies here, and it applies earlier in the project than is now usual.</p><div class="fine"><b>Sources</b><ul class="srcs"><li><a href="https://www.business-standard.com/amp/india-news/incentives-given-for-862k-tonnes-green-hydrogen-production-capacity-joshi-126092401382_1.html">Business Standard, incentives for 862k tonnes of green hydrogen capacity, 24 September 2026</a></li><li><a href="https://www.deccanherald.com/amp/story/india/national-green-hydrogen-mission-gains-momentum-with-67-lakh-mtpa-ammonia-supply-agreements-4042780">Deccan Herald, mission milestones and ammonia supply agreements</a></li><li><a href="https://www.businesstoday.in/opinion/columns/story/indias-green-hydrogen-ambitions-face-a-reality-check-536276-2026-06-11">Business Today, India’s green hydrogen ambitions face a reality check, 11 June 2026</a></li><li><a href="https://www.tradingview.com/news/moodys:447a704880088:0-green-hydrogen-india-moves-from-allocation-to-commissioning-but-execution-gap-remains/">Moody’s commentary, green hydrogen: India moves from allocation to commissioning (S&amp;P Global data)</a></li><li><a href="https://renewablewatch.in/2026/06/01/unlocking-demand-opportunities-and-challenges-in-the-green-hydrogen-sector/">Renewable Watch, unlocking demand in the green hydrogen sector, 1 June 2026</a></li></ul><p style="margin-top:12px">Derived figures and views are those of the author, prepared from public information only. Not advice on any bid or investment.</p></div></article></div></section>
+<section style="padding-block:40px 60px"><div class="wrap"><div class="startbox"><h3>Get new articles</h3><p>New analysis is added as developments occur. Subscribe by email and name the topics you want.</p><div class="cta"><a class="btn" href="mailto:kausik@eikosadvisory.com?subject=Subscribe%20to%20Eikos%20Knowledge%20Centre&amp;body=Name%3A%0AOrganisation%3A%0ATopics%20(Policy%2C%20Regulation%2C%20Bids%2C%20Technology)%3A">Subscribe</a></div></div></div></section>
+</main>
+<footer><div class="wrap"><span>© Eikos Advisory Services LLP</span><span><a href="index.html#contact" style="color:var(--on-navy-mute)">kausik@eikosadvisory.com</a></span></div></footer>
+</body></html>
