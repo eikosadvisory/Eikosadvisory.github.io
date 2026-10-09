@@ -178,9 +178,39 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
 .post .tablewrap.w td:nth-child(n+2){white-space:nowrap}
 .srcs{margin:10px 0 0;padding-left:1.1em;font-size:.88rem;color:var(--muted)}
 .srcs li{color:var(--muted);overflow-wrap:anywhere}
+
+/* charts and motion */
+:root{--bar:#2F4466;--bar-total:#1B2A41;--bar-add:#C77D33;--bar-neg:#8A97AB}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bar:#7F93B3;--bar-total:#D9E0EA;--bar-neg:#6D7F9B}}
+:root[data-theme="dark"]{--bar:#7F93B3;--bar-total:#D9E0EA;--bar-neg:#6D7F9B}
+.top nav{max-width:100%;flex-wrap:nowrap;overflow-x:auto;white-space:nowrap;scrollbar-width:none;padding-bottom:10px;-webkit-overflow-scrolling:touch}
+.top nav::-webkit-scrollbar{display:none}
+@media (min-width:1000px){.top nav{flex-wrap:wrap;overflow:visible;padding-bottom:0}}
+.chartbox{background:var(--surface);border:1px solid var(--line);padding:20px 20px 16px;margin:18px 0}
+.chartbox h3{font-size:1.05rem;margin:0}
+.chartbox .sub{color:var(--muted);font-size:.9rem;margin-top:4px}
+.cb-rows{margin-top:16px;display:flex;flex-direction:column;gap:13px}
+.cb-row{display:grid;gap:5px}
+.cb-lab{font-size:.94rem;color:var(--ink)}
+.cb-lab small{color:var(--muted);font-size:.84rem}
+.cb-line{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center}
+.cb-track{position:relative;height:20px;border-left:1px solid var(--muted)}.cb-track.r{height:32px}
+.cb-bar{position:absolute;top:0;bottom:0;left:0;background:var(--bar);border-radius:0 4px 4px 0;min-width:3px}
+.cb-bar.hi{background:var(--bar-add)}
+.cb-bar.tot{background:var(--bar-total)}
+.cb-seg{position:absolute;top:0;bottom:0}
+.cb-track.r .cb-bar{bottom:auto;height:18px}
+.cb-rng{position:absolute;top:23px;height:7px;border-left:2px solid var(--ink);border-right:2px solid var(--ink);box-sizing:border-box}
+.cb-rng::after{content:"";position:absolute;left:0;right:0;top:2px;border-top:2px solid var(--ink)}
+.cb-val{font:700 1rem var(--serif);min-width:3.6em;text-align:right;color:var(--ink)}
+.cb-note{margin-top:12px;padding-top:10px;border-top:1px solid var(--line);color:var(--muted);font-size:.88rem}
+.js .cb-bar,.js .cb-seg{transform:scaleX(0);transform-origin:left;transition:transform .9s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.js .chartbox.in .cb-bar,.js .chartbox.in .cb-seg{transform:none}
+@media (prefers-reduced-motion:reduce){.js .cb-bar,.js .cb-seg{transition:none;transform:none}}
 </style>
+<script>document.documentElement.className+=" js";</script>
 </head><body>
-<header class="top"><div class="wrap"><a class="brand" href="index.html">Eikos Advisory Services LLP</a><nav aria-label="Sections"><a href="index.html#results">Results</a><a href="index.html#questions">Questions</a><a href="index.html#work">Work</a><a href="index.html#example">Example</a><a href="index.html#engage">Start</a><a href="knowledge.html">Knowledge Centre</a><a href="index.html#contact">Contact</a></nav></div></header>
+<header class="top"><div class="wrap"><a class="brand" href="index.html">Eikos Advisory Services LLP</a><nav aria-label="Sections"><a href="index.html#results">Results</a><a href="index.html#questions">Questions</a><a href="index.html#example">Example</a><a href="index.html#work">Work</a><a href="index.html#practice">Practice</a><a href="index.html#record">Record</a><a href="knowledge.html">Knowledge Centre</a><a href="index.html#engage">Start</a><a href="index.html#contact">Contact</a></nav></div></header>
 <main>
 <section style="padding-block:40px 12px"><div class="wrap">
   <div class="head"><div class="eyebrow">Knowledge Centre</div><h2>Policy, regulation, bids and technology</h2>
@@ -188,29 +218,39 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
   <div class="sub"><a class="btn dark" href="mailto:kausik@eikosadvisory.com?subject=Subscribe%20to%20Eikos%20Knowledge%20Centre&amp;body=Name%3A%0AOrganisation%3A%0ATopics%20(Policy%2C%20Regulation%2C%20Bids%2C%20Technology)%3A">Subscribe</a><a class="btn ghost" style="color:var(--ink);border-color:var(--line)" href="https://www.linkedin.com/in/kausik-chowdhuri-89508714">Follow on LinkedIn</a></div>
 </div></section>
 <div class="kc-nav"><div class="wrap"><a href="#gec3">Policy</a><a href="#merc">Regulation</a><a href="#bids">Bids</a><a href="#gh2">Technology</a></div></div>
-<section class="kc-sec" id="policy-sec"><div class="wrap"><div class="eyebrow">Policy</div><article class="post" id="gec3"><div><span class="tag2">Policy</span><span class="tag2">Storage</span><span class="tag2">Transmission</span></div><h1>Green Energy Corridor Phase-III: storage joins the transmission plan</h1><div class="meta">Kausik Chowdhuri · 1 October 2026 · Based on the PIB release of 30 September 2026</div>
+<section class="kc-sec" id="policy-sec"><div class="wrap"><div class="eyebrow">Policy</div><article class="post" id="gec3"><div><span class="tag2">Policy</span><span class="tag2">Storage</span><span class="tag2">Transmission</span></div><h1>Green Energy Corridor Phase-III: storage joins the transmission plan</h1><div class="meta">Kausik Chowdhuri · 1 October 2026 · Based on the PIB (Press Information Bureau) release of 30 September 2026</div>
 <h2>What was approved</h2>
 <ul>
-<li>Green Energy Corridor Phase-III (GEC-III): intra-State transmission to evacuate up to <b>135 GW</b> of renewable energy, and <b>50 GWh</b> of battery storage at the RE developer end or other locations of grid importance.</li>
-<li>Target: <b>FY 2032-33</b>. Total outlay <b>Rs 1,86,405 crore</b>, with Central Financial Support of <b>Rs 54,082 crore</b>.</li>
-<li>Greenfield transmission goes by tariff-based competitive bidding on a BOOM model, with State Transmission Utilities as implementing agencies. Brownfield strengthening is on cost-plus.</li>
+<li>Green Energy Corridor Phase-III (GEC-III): intra-State transmission to evacuate up to <b>135 GW (gigawatts)</b> of renewable energy, and <b>50 GWh (gigawatt-hours)</b> of battery storage at the RE (renewable energy) developer end or other locations of grid importance.</li>
+<li>Target: <b>FY (financial year) 2032-33</b>. Total outlay <b>Rs 1,86,405 crore (1 crore = 10 million)</b>, with Central Financial Support of <b>Rs 54,082 crore</b>.</li>
+<li>Greenfield transmission goes by tariff-based competitive bidding on a BOOM (build, own, operate and maintain) model, with State Transmission Utilities as implementing agencies. Brownfield strengthening is on cost-plus.</li>
 </ul>
 <h2>The numbers, read together</h2>
+<div class="chartbox" role="group" aria-label="Scheme outlay split, Rs crore">
+<h3>Where the outlay goes, Rs crore</h3>
+<div class="sub">Components as listed in the release; they sum to Rs 1,86,378 crore against a stated total of Rs 1,86,405 crore.</div>
+<div class="cb-rows">
+<div class="cb-row"><div class="cb-lab">Intra-State transmission <small>(73%)</small></div><div class="cb-line"><div class="cb-track"><div class="cb-bar tot" style="width:73.2%" title="Intra-State transmission: Rs 1,36,378 crore"></div></div><div class="cb-val">1,36,378</div></div></div>
+<div class="cb-row"><div class="cb-lab">Battery storage <small>(27%)</small></div><div class="cb-line"><div class="cb-track"><div class="cb-bar hi" style="width:26.8%;--d:.15s" title="Battery storage: Rs 50,000 crore"></div></div><div class="cb-val">50,000</div></div></div>
+<div class="cb-row"><div class="cb-lab">Central Financial Support <small>(29% of the stated total)</small></div><div class="cb-line"><div class="cb-track"><div class="cb-bar" style="width:29.0%;--d:.3s" title="Central Financial Support: Rs 54,082 crore"></div></div><div class="cb-val">54,082</div></div></div>
+</div>
+<div class="cb-note">Bars are drawn to one scale. The release does not say how central support divides between transmission and storage.</div>
+</div>
 <div class="tablewrap" role="region" aria-label="GEC-III headline figures and derived ratios" tabindex="0"><table>
 <thead><tr><th>Item</th><th>Value</th><th>Basis</th></tr></thead><tbody>
 <tr><td>Intra-State transmission outlay</td><td>Rs 1,36,378 cr</td><td>PIB release</td></tr>
 <tr><td>Battery storage outlay</td><td>Rs 50,000 cr</td><td>PIB release</td></tr>
 <tr><td>Central Financial Support</td><td>Rs 54,082 cr</td><td>PIB release</td></tr>
 <tr class="d"><td>Central support as a share of total outlay</td><td>29%</td><td>Derived: 54,082 / 1,86,405</td></tr>
-<tr class="d"><td>Storage outlay per MWh</td><td>Rs 100 lakh</td><td>Derived: Rs 50,000 cr / 50,000 MWh</td></tr>
-<tr class="d"><td>Transmission outlay per MW evacuated</td><td>Rs 1.0 cr</td><td>Derived: Rs 1,36,378 cr / 1,35,000 MW</td></tr>
+<tr class="d"><td>Storage outlay per MWh (megawatt-hours)</td><td>Rs 100 lakh (1 lakh = 100,000)</td><td>Derived: Rs 50,000 cr / 50,000 MWh</td></tr>
+<tr class="d"><td>Transmission outlay per MW (megawatts) evacuated</td><td>Rs 1.0 cr</td><td>Derived: Rs 1,36,378 cr / 1,35,000 MW</td></tr>
 </tbody></table></div>
 <p style="font-size:.93rem;color:var(--muted)">Two cautions. The release does not say how the central support divides between transmission and storage. And the two components add to Rs 1,86,378 crore, Rs 27 crore less than the stated total; the release does not explain the difference. The per-unit figures are arithmetic on headline numbers, not scheme parameters.</p>
-<p>One cross-check is worth making. Storage outlay of about Rs 100 lakh/MWh sits in the same range as the gross capex that the recent SJVN Haryana tariff can carry, about Rs 94 lakh/MWh on stated assumptions (see the Bids article below). The scheme’s planning figure and recent auction outcomes are not far apart.</p>
+<p>One cross-check is worth making. Storage outlay of about Rs 100 lakh/MWh sits in the same range as the gross capex (capital expenditure) that the recent SJVN (formerly Satluj Jal Vidyut Nigam) Haryana tariff can carry, about Rs 94 lakh/MWh on stated assumptions (see the Bids article below). The scheme’s planning figure and recent auction outcomes are not far apart.</p>
 <h2>What it means, by segment</h2>
 <ul>
-<li><b>State utilities and DISCOMs.</b> Central support offsets intra-State transmission charges, so the benefit reaches consumers through lower charges, not through lower generation cost. Execution capacity at State Transmission Utilities is likely to be the constraint.</li>
-<li><b>Transmission developers and EPC contractors.</b> A State-level TBCB pipeline tied to 135 GW of evacuation. Bids will be tariff-driven and competitive; the winners are likely to be those who price construction, right-of-way and delay risk correctly.</li>
+<li><b>State utilities and DISCOMs (distribution companies).</b> Central support offsets intra-State transmission charges, so the benefit reaches consumers through lower charges, not through lower generation cost. Execution capacity at State Transmission Utilities is likely to be the constraint.</li>
+<li><b>Transmission developers and EPC (engineering, procurement and construction) contractors.</b> A State-level TBCB (tariff-based competitive bidding) pipeline tied to 135 GW of evacuation. Bids will be tariff-driven and competitive; the winners are likely to be those who price construction, right-of-way and delay risk correctly.</li>
 <li><b>RE developers.</b> Storage can be placed at the generator end, which favours co-located solar-plus-storage and eases curtailment and non-solar-hour supply. The value depends on how storage is paid.</li>
 <li><b>Storage integrators and manufacturers.</b> 50 GWh by FY 2032-33 is a large, visible demand signal. The release mentions domestic manufacturing employment but gives no domestic-content or supplier conditions; those will decide who benefits.</li>
 <li><b>Lenders.</b> Central support reduces tariff and offtake risk, but lenders will still want a clear payment structure for storage and a realistic view of State utility credit.</li>
@@ -230,21 +270,21 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
 <li>The first test is tender design. Support that is certain, timely and clearly specified will bring tighter bids; support that is conditional will be priced as risk.</li>
 <li>Every stage of the chain depends on the same discipline: trace each number to a clause or an assumption before committing to a bid or an investment.</li>
 </ul><div class="fine"><b>Sources</b><ul class="srcs"><li><a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2316948">Press Information Bureau, Cabinet approves Green Energy Corridor Phase-III, 30 September 2026 (Release ID 2316948)</a></li></ul><p style="margin-top:12px">Derived figures and views are those of the author, prepared from public information only. Not advice on any bid or investment.</p></div></article></div></section>
-<section class="kc-sec" id="regulation-sec"><div class="wrap"><div class="eyebrow">Regulation</div><article class="post" id="merc"><div><span class="tag2">Regulation</span><span class="tag2">Storage</span><span class="tag2">Maharashtra</span></div><h1>Maharashtra’s draft storage rules: storage becomes the price of grid access, and safety is left to others</h1><div class="meta">Kausik Chowdhuri · 1 October 2026 · Based on the MERC draft regulations and Explanatory Memorandum of 22 September 2026</div>
+<section class="kc-sec" id="regulation-sec"><div class="wrap"><div class="eyebrow">Regulation</div><article class="post" id="merc"><div><span class="tag2">Regulation</span><span class="tag2">Storage</span><span class="tag2">Maharashtra</span></div><h1>Maharashtra’s draft storage rules: storage becomes the price of grid access, and safety is left to others</h1><div class="meta">Kausik Chowdhuri · 1 October 2026 · Based on the MERC (Maharashtra Electricity Regulatory Commission) draft regulations and Explanatory Memorandum of 22 September 2026</div>
 <h2>What MERC has proposed</h2>
-<p>The Maharashtra Electricity Regulatory Commission has published seven draft regulations to put the State’s Renewable Energy and Energy Storage Policy, 2025-26 to 2035-36 into force. The policy aims for renewables to meet 50% of demand by FY 2029-30 and 65% by FY 2035-36, and for distribution licensees to hold storage equal to at least 10% of demand by FY 2035-36, with at least 85% of stored energy from renewable sources. Its planning assumption is about 100 GW of renewables and 20 GW / 100 GWh of storage by FY 2035-36. This note covers the storage provisions in the Battery Energy Storage Systems draft and the connectivity draft.</p>
+<p>The Maharashtra Electricity Regulatory Commission has published seven draft regulations to put the State’s Renewable Energy and Energy Storage Policy, 2025-26 to 2035-36 into force. The policy aims for renewables to meet 50% of demand by FY (financial year) 2029-30 and 65% by FY 2035-36, and for distribution licensees to hold storage equal to at least 10% of demand by FY 2035-36, with at least 85% of stored energy from renewable sources. Its planning assumption is about 100 GW (gigawatts) of renewables and 20 GW / 100 GWh (gigawatt-hours) of storage by FY 2035-36. This note covers the storage provisions in the Battery Energy Storage Systems draft and the connectivity draft.</p>
 <div class="tablewrap" role="region" aria-label="Key storage provisions in the MERC drafts" tabindex="0"><table>
 <thead><tr><th>Provision</th><th>What the draft says</th></tr></thead><tbody>
-<tr><td>Storage tied to connectivity</td><td>Minimum usable storage of 1 MWh per MW of sanctioned connectivity for applications up to 2030, and 2 MWh per MW after</td></tr>
-<tr><td>Standalone BESS size</td><td>At least 5 MW at the intra-State transmission system, and 1 MW at distribution; aggregation allowed</td></tr>
+<tr><td>Storage tied to connectivity</td><td>Minimum usable storage of 1 MWh (megawatt-hours) per MW (megawatts) of sanctioned connectivity for applications up to 2030, and 2 MWh per MW after</td></tr>
+<tr><td>Standalone BESS (battery energy storage system) size</td><td>At least 5 MW at the intra-State transmission system, and 1 MW at distribution; aggregation allowed</td></tr>
 <tr><td>Standalone BESS duration</td><td>At least 2 hours, to be reviewed by the Commission; projects at financial closure or under construction are deemed compliant</td></tr>
 <tr><td>Charges on energy stored</td><td>Exempt from transmission, demand, wheeling and cross-subsidy charges, provided the stored energy is consumed within Maharashtra</td></tr>
 <tr><td>Procurement</td><td>Competitive bidding under Section 63 preferred, including availability-based battery-as-a-service; Section 62 only in exceptional cases with prior approval</td></tr>
-<tr><td>Safety (Regulation 16)</td><td>One paragraph requiring compliance with standards and statutory requirements of CEA, BIS, the Ministry of Power and other authorities</td></tr>
+<tr><td>Safety (Regulation 16)</td><td>One paragraph requiring compliance with standards and statutory requirements of CEA (Central Electricity Authority), BIS (Bureau of Indian Standards), the Ministry of Power and other authorities</td></tr>
 </tbody></table></div>
 <h2>Three things the drafts do</h2>
 <ul>
-<li><b>They make storage a condition of access, not a choice.</b> A 100 MW solar connectivity would carry a minimum of 100 MWh of usable storage to 2030. At the capex-equivalent of about Rs 94 lakh/MWh that the recent SJVN Haryana tariff supports on stated assumptions (see the Bids article), that is on the order of Rs 94 crore that belongs in the project’s bid, not its footnote. This is an illustration, not a cost estimate.</li>
+<li><b>They make storage a condition of access, not a choice.</b> A 100 MW solar connectivity would carry a minimum of 100 MWh of usable storage to 2030. At the capex (capital expenditure)-equivalent of about Rs 94 lakh (1 lakh = 100,000)/MWh that the recent SJVN (formerly Satluj Jal Vidyut Nigam) Haryana tariff supports on stated assumptions (see the Bids article), that is on the order of Rs 94 crore (1 crore = 10 million) that belongs in the project’s bid, not its footnote. This is an illustration, not a cost estimate.</li>
 <li><b>They standardise a two-hour product.</b> The 2-hour minimum for standalone storage matches what recent tenders have bought. But the policy’s own planning figures, 100 GWh over 20 GW, imply an average of five hours. The regulations set a floor well below that average, and leave the Commission to revise it.</li>
 <li><b>They give the exemption and the market opening different conditions.</b> Standalone storage may undertake inter-State sale, but the charge exemption applies only if the stored energy is consumed within Maharashtra. A project that sells outside the State should price in the charges.</li>
 </ul>
@@ -268,18 +308,24 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
 <h2>Our view</h2>
 <p>Maharashtra is writing storage into the rules of grid access, and other States will watch. The design is sound in intent. Its weakest link is verification: a mandate for storage is worth what the evidence that the storage performs is worth. The draft is where that evidence should be specified.</p>
 <p style="font-size:.93rem;color:var(--muted)">The comment deadline and hearing dates are in MERC’s public notice, which this note does not reproduce; it should be checked before any filing.</p><div class="fine"><b>Sources</b><ul class="srcs"><li>Maharashtra Electricity Regulatory Commission, Draft Battery Energy Storage Systems Regulations, 2026 (draft notification)</li><li>Maharashtra Electricity Regulatory Commission, Explanatory Memorandum on the proposed amendments to implement the Maharashtra Renewable Energy and Energy Storage Policy, 2025-26 to 2035-36, 22 September 2026</li></ul><p style="margin-top:12px">Derived figures and views are those of the author, prepared from public information only. Not advice on any bid or investment.</p></div></article></div></section>
-<section class="kc-sec" id="bidsec"><div class="wrap"><div class="eyebrow">Bids</div><article class="post" id="bids"><div><span class="tag2">Bids</span><span class="tag2">Storage</span><span class="tag2">Tariffs</span></div><h1>A tariff is a capex statement: reading five Indian storage auctions backwards</h1><div class="meta">Kausik Chowdhuri · 1 October 2026 · Based on published auction results</div>
+<section class="kc-sec" id="bidsec"><div class="wrap"><div class="eyebrow">Bids</div><article class="post" id="bids"><div><span class="tag2">Bids</span><span class="tag2">Storage</span><span class="tag2">Tariffs</span></div><h1>A tariff is a capex (capital expenditure) statement: reading five Indian storage auctions backwards</h1><div class="meta">Kausik Chowdhuri · 1 October 2026 · Based on published auction results</div>
 <h2>The series</h2>
-<p>Five recent standalone storage auctions, all for two-hour systems, with a fixed viability gap funding (VGF) of Rs 18 lakh/MWh where reported, cleared at very different tariffs over ten months.</p>
+<p>Five recent standalone storage auctions, all for two-hour systems, with a fixed viability gap funding (VGF) of Rs 18 lakh (1 lakh = 100,000)/MWh (megawatt-hours) where reported, cleared at very different tariffs over ten months.</p>
+<div class="chartbox" role="group" aria-label="Capex each winning tariff supports at a 10 percent project IRR, Rs lakh per MWh">
+<h3>Capex each winning tariff supports, Rs lakh/MWh</h3>
+<div class="sub">Bar: at a 10% project IRR (internal rate of return). Line: range at 8% to 12%. Derived on the assumptions below, not reported.</div>
+<div class="cb-rows"><div class="cb-row"><div class="cb-lab">GUVNL (Gujarat Urja Vikas Nigam Limited) 2 GW (gigawatts) / 4 GWh (gigawatt-hours) <small>· Nov 2025 · tariff Rs 1.85 lakh/MW (megawatts)/month</small></div><div class="cb-line"><div class="cb-track r"><div class="cb-bar " style="width:70.36%;--d:0.0s" title="GUVNL 2 GW / 4 GWh: capex supported 77.4 at 10% IRR (range 72.4 to 83.1)"></div><div class="cb-rng" style="left:65.82%;width:9.73%" aria-hidden="true"></div></div><div class="cb-val">77.4</div></div></div><div class="cb-row"><div class="cb-lab">SJVN (formerly Satluj Jal Vidyut Nigam) Panipat 250 MW / 500 MWh <small>· Feb 2026 · tariff Rs 1.97 lakh/MW/month</small></div><div class="cb-line"><div class="cb-track r"><div class="cb-bar " style="width:74.09%;--d:0.1s" title="SJVN Panipat 250 MW / 500 MWh: capex supported 81.5 at 10% IRR (range 76.2 to 87.5)"></div><div class="cb-rng" style="left:69.27%;width:10.27%" aria-hidden="true"></div></div><div class="cb-val">81.5</div></div></div><div class="cb-row"><div class="cb-lab">GUVNL 335 MW / 670 MWh <small>· Feb 2026 · tariff Rs 2.10 lakh/MW/month</small></div><div class="cb-line"><div class="cb-track r"><div class="cb-bar " style="width:78.09%;--d:0.2s" title="GUVNL 335 MW / 670 MWh: capex supported 85.9 at 10% IRR (range 80.2 to 92.4)"></div><div class="cb-rng" style="left:72.91%;width:11.09%" aria-hidden="true"></div></div><div class="cb-val">85.9</div></div></div><div class="cb-row"><div class="cb-lab">GUVNL 450 MW / 900 MWh <small>· Aug 2026 · tariff Rs 2.32 lakh/MW/month</small></div><div class="cb-line"><div class="cb-track r"><div class="cb-bar " style="width:84.91%;--d:0.3s" title="GUVNL 450 MW / 900 MWh: capex supported 93.4 at 10% IRR (range 87.1 to 100.5)"></div><div class="cb-rng" style="left:79.18%;width:12.18%" aria-hidden="true"></div></div><div class="cb-val">93.4</div></div></div><div class="cb-row"><div class="cb-lab">SJVN Haryana 265 MW / 530 MWh <small>· Sep 2026 · tariff Rs 2.35 lakh/MW/month</small></div><div class="cb-line"><div class="cb-track r"><div class="cb-bar hi" style="width:85.82%;--d:0.4s" title="SJVN Haryana 265 MW / 530 MWh: capex supported 94.4 at 10% IRR (range 88.1 to 101.6)"></div><div class="cb-rng" style="left:80.09%;width:12.27%" aria-hidden="true"></div></div><div class="cb-val">94.4</div></div></div></div>
+<div class="cb-note">The bars rise with the tariff, but not in a straight line: the tenders differ in terms.</div>
+</div>
 <div class="tablewrap w" role="region" aria-label="Recent standalone BESS auction results and the capex each supports" tabindex="0"><table>
-<thead><tr><th>Auction</th><th>Reported</th><th>L1 tariff, Rs lakh/MW/month</th><th>Capex it supports at 10% IRR, Rs lakh/MWh</th><th>Range at 8% to 12%</th></tr></thead><tbody>
+<thead><tr><th>Auction</th><th>Reported</th><th>L1 (lowest bid) tariff, Rs lakh/MW/month</th><th>Capex it supports at 10% IRR, Rs lakh/MWh</th><th>Range at 8% to 12%</th></tr></thead><tbody>
 <tr><td>GUVNL 2 GW / 4 GWh</td><td>Nov 2025</td><td>1.85</td><td>77.4</td><td>72.4 to 83.1</td></tr>
 <tr><td>SJVN Panipat 250 MW / 500 MWh</td><td>Feb 2026</td><td>1.97</td><td>81.5</td><td>76.2 to 87.5</td></tr>
 <tr><td>GUVNL 335 MW / 670 MWh</td><td>Feb 2026</td><td>2.10</td><td>85.9</td><td>80.2 to 92.4</td></tr>
 <tr><td>GUVNL 450 MW / 900 MWh</td><td>Aug 2026</td><td>2.32</td><td>93.4</td><td>87.1 to 100.5</td></tr>
 <tr><td>SJVN Haryana 265 MW / 530 MWh</td><td>Sep 2026</td><td>2.35</td><td>94.4</td><td>88.1 to 101.6</td></tr>
 </tbody></table></div>
-<p style="font-size:.93rem;color:var(--muted)">The right-hand columns are derived, not reported. Assumptions: 12-year term, 95% availability, O&amp;M of 1.5% of capex a year rising 3%, one augmentation spend of 5% of capex in year 7, VGF of Rs 18 lakh/MWh received 10% at financial closure, 45% at commercial operation and 15% a year for three years after, pre-tax, before debt, no tax or grid charges. The 12-year term is reported for the two latest auctions and assumed for the others.</p>
+<p style="font-size:.93rem;color:var(--muted)">The right-hand columns are derived, not reported. Assumptions: 12-year term, 95% availability, O&amp;M (operation and maintenance) of 1.5% of capex a year rising 3%, one augmentation spend of 5% of capex in year 7, VGF of Rs 18 lakh/MWh received 10% at financial closure, 45% at commercial operation and 15% a year for three years after, pre-tax, before debt, no tax or grid charges. The 12-year term is reported for the two latest auctions and assumed for the others.</p>
 <h2>What reading it backwards shows</h2>
 <ul>
 <li><b>Tariffs rose 27%; the capex they support rose 22%.</b> From Rs 1.85 to Rs 2.35 lakh/MW/month is a rise of 27%. On the assumptions above, the capex those tariffs can carry rose from about Rs 77 to Rs 94 lakh/MWh, a rise of Rs 17 lakh/MWh. The VGF is fixed, so the tariff has to move by more than the capex it covers.</li>
@@ -301,10 +347,16 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
 <section class="kc-sec" id="techsec"><div class="wrap"><div class="eyebrow">Technology</div><article class="post" id="gh2"><div><span class="tag2">Technology</span><span class="tag2">Green hydrogen</span></div><h1>Green hydrogen in India: the gap between allocation and commissioning is an interface problem</h1><div class="meta">Kausik Chowdhuri · 1 October 2026 · Based on published mission and market data</div>
 <h2>The gap</h2>
 <div class="stats">
-<div class="stat"><b>8.62 lakh t/yr</b><span>production capacity incentivised under SIGHT</span></div>
+<div class="stat"><b>8.62 lakh (1 lakh = 100,000) t/yr (tonnes a year)</b><span>production capacity incentivised under SIGHT (Strategic Interventions for Green Hydrogen Transition)</span></div>
 <div class="stat"><b>about 8,000 to 11,000 t/yr</b><span>reported as commissioned or operating, depending on source and date</span></div>
 <div class="stat"><b>6.7 lakh t/yr</b><span>green ammonia supply agreements with 11 fertiliser plants</span></div>
 <div class="stat"><b>30,000 t/yr</b><span>refinery hydrogen awarded, at Rs 279/kg in one tender</span></div>
+</div>
+<div class="chartbox" role="group" aria-label="Green hydrogen allocation against reported operation, lakh tonnes a year">
+<h3>Allocation against operation, lakh tonnes a year</h3>
+<div class="sub">All bars are drawn to one scale. The operating bar is a sliver because the reported output is about 1% to 1.3% of incentivised capacity.</div>
+<div class="cb-rows"><div class="cb-row"><div class="cb-lab">Production capacity incentivised under SIGHT</div><div class="cb-line"><div class="cb-track"><div class="cb-bar tot" style="width:100.00%;--d:0s" title="8.62 lakh t/yr"></div></div><div class="cb-val" style="min-width:7.5em;font-size:.9rem">8.62 lakh t/yr</div></div></div><div class="cb-row"><div class="cb-lab">Green ammonia supply agreements, 11 fertiliser plants</div><div class="cb-line"><div class="cb-track"><div class="cb-bar " style="width:77.73%;--d:0.1s" title="6.7 lakh t/yr"></div></div><div class="cb-val" style="min-width:7.5em;font-size:.9rem">6.7 lakh t/yr</div></div></div><div class="cb-row"><div class="cb-lab">Refinery hydrogen awarded in one tender</div><div class="cb-line"><div class="cb-track"><div class="cb-bar " style="width:3.48%;--d:0.2s" title="0.30 lakh t/yr"></div></div><div class="cb-val" style="min-width:7.5em;font-size:.9rem">0.30 lakh t/yr</div></div></div><div class="cb-row"><div class="cb-lab">Reported as commissioned or operating <small>(about 8,000 to 11,000 t/yr, by source)</small></div><div class="cb-line"><div class="cb-track"><div class="cb-bar hi" style="width:1.31%;--d:0.3s" title="about 0.08 to 0.11 lakh t/yr"></div></div><div class="cb-val" style="min-width:7.5em;font-size:.9rem">about 0.08 to 0.11 lakh t/yr</div></div></div></div>
+<div class="cb-note">The measures are different kinds of figure (capacity, agreements, awards, output) and are not additive.</div>
 </div>
 <p style="font-size:.93rem;color:var(--muted)">Incentivised capacity, awards and supply agreements come from the Ministry of New and Renewable Energy statements of 24 September 2026. The operating figure is a range from two reports: about 8,000 tonnes a year (Business Today, June 2026) and 11,329 tonnes a year (S&amp;P Global data, cited by Moody’s). Against 8.62 lakh tonnes, that is roughly 1% to 1.3%, the author’s arithmetic. A pipeline of over 6 million tonnes a year and about 113,000 tonnes financed are also reported.</p>
 <p>Published commentary gives familiar reasons: offtake certainty, financing, infrastructure, and cost. Those are real. This note adds one that shows up in the gap between awarded and operating: the plant is a chain of interfaces, and each one needs an owner.</p>
@@ -326,7 +378,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
 <h2>What it means, by segment</h2>
 <ul>
 <li><b>Developers.</b> Offtake is necessary but not sufficient; the interface register is what turns an award into an operating plant.</li>
-<li><b>Electrolyser makers and EPC contractors.</b> Guarantees tied to a stated operating profile will meet real profiles; say so in the contract and price it.</li>
+<li><b>Electrolyser makers and EPC (engineering, procurement and construction) contractors.</b> Guarantees tied to a stated operating profile will meet real profiles; say so in the contract and price it.</li>
 <li><b>Offtakers: refineries and fertiliser plants.</b> The gas specification is an input to the design, and it needs to be stated early.</li>
 <li><b>Lenders and insurers.</b> Ask for the interface register and for evidence that each item has been tested.</li>
 <li><b>Policy makers and standard setters.</b> Mission tracking that follows operating capacity, not only awards, would show where projects stall.</li>
@@ -336,4 +388,10 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
 <section style="padding-block:40px 60px"><div class="wrap"><div class="startbox"><h3>Get new articles</h3><p>New analysis is added as developments occur. Subscribe by email and name the topics you want.</p><div class="cta"><a class="btn" href="mailto:kausik@eikosadvisory.com?subject=Subscribe%20to%20Eikos%20Knowledge%20Centre&amp;body=Name%3A%0AOrganisation%3A%0ATopics%20(Policy%2C%20Regulation%2C%20Bids%2C%20Technology)%3A">Subscribe</a></div></div></div></section>
 </main>
 <footer><div class="wrap"><span>© Eikos Advisory Services LLP</span><span><a href="index.html#contact" style="color:var(--on-navy-mute)">kausik@eikosadvisory.com</a></span></div></footer>
+<script>
+(function(){var els=document.querySelectorAll('.chartbox');
+if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.2});
+els.forEach(function(e){io.observe(e)});})();
+</script>
 </body></html>

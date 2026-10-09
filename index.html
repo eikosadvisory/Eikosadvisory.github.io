@@ -145,140 +145,258 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
 .src{font-size:.88rem;color:var(--muted);margin-top:14px}
 .src a{overflow-wrap:anywhere}
 
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-</style>
 
+.hero .plain{font:500 clamp(1.05rem,2.2vw,1.3rem)/1.5 var(--sans);color:#fff;max-width:46rem;margin:14px 0 6px}
+
+/* v3: visuals and motion */
+.sens{min-width:0}
+@media (max-width:640px){.layers li span:not(.num){grid-column:1/-1}.layers li{padding:14px 16px;gap:6px 12px}}
+:root{--bar:#2F4466;--bar-total:#1B2A41;--bar-add:#C77D33;--bar-neg:#8A97AB}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bar:#7F93B3;--bar-total:#D9E0EA;--bar-neg:#6D7F9B}}
+:root[data-theme="dark"]{--bar:#7F93B3;--bar-total:#D9E0EA;--bar-neg:#6D7F9B}
+.top nav{max-width:100%;flex-wrap:nowrap;overflow-x:auto;white-space:nowrap;scrollbar-width:none;padding-bottom:10px;-webkit-overflow-scrolling:touch}
+.top nav::-webkit-scrollbar{display:none}
+@media (min-width:1000px){.top nav{flex-wrap:wrap;overflow:visible;padding-bottom:0}}
+.top nav a{padding-block:4px}
+/* hero chain */
+.chain{list-style:none;margin:30px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:6px;position:relative;max-width:720px}
+.chain::before,.chain::after{content:"";position:absolute;top:17px;left:12.5%;right:12.5%;height:2px}
+.chain::before{background:var(--navy-2)}
+.chain::after{background:var(--copper-on-navy);transform-origin:left;transform:scaleX(1)}
+.chain li{position:relative;z-index:1;text-align:center;display:flex;flex-direction:column;align-items:center;gap:6px}
+.chain .dot{width:36px;height:36px;border-radius:50%;background:var(--navy);border:2px solid var(--copper-on-navy);color:var(--copper-on-navy);font:700 .95rem/32px var(--sans)}
+.chain b{font:600 1.05rem var(--serif);color:var(--on-navy)}
+.chain i{font:400 .82rem/1.3 var(--sans);font-style:normal;color:var(--on-navy-mute);max-width:12ch}
+@media (max-width:420px){.chain b{font-size:.98rem}.chain i{font-size:.78rem}}
+/* dots (win rate) */
+.dots{display:flex;flex-wrap:wrap;gap:3px;margin-top:12px}
+.dots span{width:9px;height:9px;border-radius:50%;border:1.5px solid var(--bar-neg);box-sizing:border-box}
+.dots span.on{background:var(--copper-fill);border-color:var(--copper-fill)}
+/* icons */
+.ico{width:28px;height:28px;fill:none;stroke:var(--copper);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.cardhead{display:flex;align-items:center;justify-content:space-between}
+.sec-ico{display:flex;align-items:center;gap:12px}
+/* career path */
+.path{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:0;grid-template-columns:repeat(4,1fr);position:relative}
+.path li{position:relative;padding:22px 14px 0 0}
+.path li::before{content:"";position:absolute;top:6px;left:0;right:0;height:2px;background:var(--line)}
+.path li::after{content:"";position:absolute;top:0;left:0;width:14px;height:14px;border-radius:50%;background:var(--copper-fill);border:3px solid var(--bg)}
+.path .yrs{font:700 .9rem var(--sans);color:var(--copper);letter-spacing:.03em}
+.path b{display:block;font:600 1.08rem/1.25 var(--serif);margin-top:2px}
+.path span.o{display:block;color:var(--muted);font-size:.9rem;margin-top:4px}
+@media (max-width:760px){.path{grid-template-columns:1fr 1fr;row-gap:18px}}
+details{background:var(--surface);border:1px solid var(--line);margin-top:16px}
+details>summary{cursor:pointer;padding:14px 18px;font:600 1rem var(--sans);color:var(--ink);list-style:none;display:flex;justify-content:space-between;gap:12px;align-items:center}
+details>summary::-webkit-details-marker{display:none}
+details>summary::after{content:"+";font:600 1.3rem/1 var(--sans);color:var(--copper)}
+details[open]>summary::after{content:"\2212"}
+details>.dbody{padding:0 18px 18px}
+details .tablewrap{border:0}
+/* waterfall */
+.wf{background:var(--surface);border:1px solid var(--line);padding:22px;margin-bottom:16px}
+.wf h3{font-size:1.1rem}
+.wf .sub{color:var(--muted);font-size:.9rem;margin-top:4px}
+.wf-rows{margin-top:18px;display:flex;flex-direction:column;gap:14px}
+.wf-row{display:grid;gap:5px}
+.wf-lab{font-size:.95rem;color:var(--ink)}
+.wf-line{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center}
+.wf-track{position:relative;height:24px;border-left:1px solid var(--muted)}
+.wf-bar{position:absolute;top:0;bottom:0;background:var(--bar);border-radius:0 4px 4px 0}
+.wf-bar.total{background:var(--bar-total)}
+.wf-bar.add{background:var(--bar-add);border-radius:4px}
+.wf-bar.neg{background:repeating-linear-gradient(135deg,var(--bar-neg) 0 5px,transparent 5px 9px);border:1.5px solid var(--bar-neg);border-radius:4px;box-sizing:border-box}
+.wf-val{font:700 1.02rem var(--serif);min-width:3.4em;text-align:right;color:var(--ink)}
+.wf-axis{display:flex;justify-content:space-between;font-size:.78rem;color:var(--muted);margin-top:6px;padding-right:calc(3.4em + 12px)}
+.wf-foot{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);color:var(--muted);font-size:.93rem}
+.wf-foot b{color:var(--ink)}
+/* knowledge teaser */
+.kc{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr))}
+.kcard{display:flex;flex-direction:column;gap:8px;background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--copper-fill);padding:18px 18px 16px;text-decoration:none;color:var(--ink);min-width:0}
+.kcard:hover{border-color:var(--copper)}
+.kcard .tag{font:700 .74rem var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--copper)}
+.kcard h3{font-size:1.08rem;line-height:1.25}
+.kcard p{color:var(--muted);font-size:.92rem}
+.kcard .more{margin-top:auto;padding-top:6px;font:600 .88rem var(--sans);color:var(--copper)}
+.record-nums{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:22px}
+.record-nums div{background:var(--surface);border:1px solid var(--line);padding:14px 12px;text-align:center}
+.record-nums b{display:block;font:700 clamp(1.7rem,6vw,2.4rem)/1 var(--serif);color:var(--ink)}
+.record-nums span{display:block;margin-top:6px;font-size:.84rem;color:var(--muted)}
+.keys{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));margin-top:0}
+.keys .card h3{font-size:1.1rem}
+/* motion: content is visible by default; the js class turns the effects on */
+.js .rv{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease;transition-delay:var(--d,0s)}
+.js .rv.in{opacity:1;transform:none}
+.js .wf-bar{transform:scaleX(0);transform-origin:left;transition:transform .9s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.js .in .wf-bar{transform:none}
+.js .dots span.on{background:transparent;border-color:var(--bar-neg);transition:background .3s,border-color .3s;transition-delay:var(--d,0s)}
+.js .in .dots span.on{background:var(--copper-fill);border-color:var(--copper-fill)}
+@keyframes drawline{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes popin{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:no-preference){
+  .chain::after{animation:drawline 1.6s .3s ease-out both}
+  .chain li{animation:popin .5s ease-out both}
+  .chain li:nth-child(1){animation-delay:.1s}.chain li:nth-child(2){animation-delay:.5s}.chain li:nth-child(3){animation-delay:.9s}.chain li:nth-child(4){animation-delay:1.3s}
+}
+
+@media (max-width:700px){
+  .swipe{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin-inline:-20px;padding:0 20px 10px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .swipe::-webkit-scrollbar{display:none}
+  .swipe>*{flex:0 0 80%;scroll-snap-align:start;scroll-margin-left:20px}
+  .stats.s5{grid-template-columns:1fr 1fr;gap:10px}
+  .stats.s5 .stat{padding:14px 12px}
+  .stats.s5 .stat:last-child{grid-column:1/-1}
+  .stat b{font-size:1.3rem}
+  .stat span{font-size:.86rem;margin-top:5px}
+  .q{padding:15px 16px}
+  section{padding-block:44px}
+  .head{margin-bottom:22px}
+  .hero{padding-block:48px 44px}
+}
+.swhint{display:none}
+@media (max-width:700px){.swhint{display:block;margin:-6px 0 14px;font-size:.82rem;color:var(--muted)}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}
+  .js .rv,.js .wf-bar,.js .dots span.on{transition:none!important;opacity:1;transform:none}
+  .js .dots span.on{background:var(--copper-fill);border-color:var(--copper-fill)}}
+</style>
+<script>document.documentElement.className+=" js";</script>
 </head><body>
 <header class="top"><div class="wrap">
   <a class="brand" href="#top">Eikos Advisory Services LLP</a>
-  <nav aria-label="Sections"><a href="#results">Results</a><a href="#questions">Questions</a><a href="#work">Work</a><a href="#example">Example</a><a href="#sectors">Sectors</a><a href="#record">Record</a><a href="#engage">Start</a><a href="knowledge.html">Knowledge Centre</a><a href="#independence">Independence</a><a href="#contact">Contact</a></nav>
+  <nav aria-label="Sections"><a href="#results">Results</a><a href="#questions">Questions</a><a href="#example">Example</a><a href="#work">Work</a><a href="#practice">Practice</a><a href="#sectors">Sectors</a><a href="#record">Record</a><a href="knowledge.html">Knowledge Centre</a><a href="#engage">Start</a><a href="#independence">Independence</a><a href="#contact">Contact</a></nav>
 </div></header>
 
 <main id="top">
 <div class="hero"><div class="wrap">
   <div class="eyebrow">Independent advisory · Indian power and infrastructure</div>
+  <p class="plain">We help developers, contractors, lenders and insurers get the numbers right on Indian power and infrastructure projects: what to bid, what to buy, and whether it was built to the contract.</p>
   <h1>Contract to number to equipment to evidence</h1>
   <p class="tag">From the tender document to the plant in operation, every number traced to a clause or a stated assumption.</p>
-  <p class="lead">Eikos Advisory Services LLP advises developers, EPC contractors, lenders and insurers on bids, sizing, procurement and assurance, from a tender document to a plant in operation. Every engagement is led and signed by its principal.</p>
+  <ol class="chain" aria-label="The chain the practice follows">
+    <li><span class="dot">1</span><b>Contract</b><i>the clause</i></li>
+    <li><span class="dot">2</span><b>Number</b><i>the tariff and the cost</i></li>
+    <li><span class="dot">3</span><b>Equipment</b><i>the offer and the quantities</i></li>
+    <li><span class="dot">4</span><b>Evidence</b><i>the test and the audit</i></li>
+  </ol>
+  <p class="lead">Eikos Advisory Services LLP (limited liability partnership) advises developers, EPC (engineering, procurement and construction) contractors, lenders and insurers on bids, sizing, procurement and assurance. Every engagement is led and signed by its principal.</p>
   <div class="cta"><a class="btn" href="mailto:kausik@eikosadvisory.com?subject=Diagnostic%20request&amp;body=Document%20to%20be%20reviewed%3A%0ADecision%20it%20feeds%3A%0ADate%20needed%20by%3A">Send me the document</a><a class="btn ghost" href="tel:+919833945444">Call 98339 45444</a></div>
-  <div class="who"><span><b>Kausik Chowdhuri</b>, principal</span><span>Thirty-nine years in the Indian power sector</span><span>Seven published works, open access · <a href="https://orcid.org/0009-0001-8271-751X">ORCID 0009-0001-8271-751X</a></span></div>
+  <div class="who"><span><b>Kausik Chowdhuri</b>, principal</span><span>Thirty-nine years in the Indian power sector</span><span>Seven published works, open access · <a href="https://orcid.org/0009-0001-8271-751X">ORCID (Open Researcher and Contributor ID) 0009-0001-8271-751X</a></span></div>
 </div></div>
 
 <section id="results" class="alt"><div class="wrap">
-  <div class="head"><div class="eyebrow">Results</div><h2>What the bid work has produced</h2></div>
-  <div class="stats">
-    <div class="stat"><b>30+</b><span>PPP engagements led at board level, Kalpataru Power, 2007 to 2018</span></div>
-    <div class="stat"><b>4 of about 14</b><span>power transmission bids won</span></div>
-    <div class="stat"><b>4 of about 11</b><span>road bids won</span></div>
-    <div class="stat"><b>50 MW / 100 MWh</b><span>GUVNL storage project won, carried through development and financial closure</span></div>
-    <div class="stat"><b>565 MW / 1,130 MWh</b><span>standalone BESS portfolio under GUVNL storage agreements</span></div>
+  <div class="head rv"><div class="eyebrow">Results</div><h2>What the bid work has produced</h2></div>
+  <div class="stats s5">
+    <div class="stat rv" style="--d:0s"><b>30+</b><span>PPP (public-private partnership) engagements led at board level, Kalpataru Power, 2007 to 2018</span></div>
+    <div class="stat rv" style="--d:.08s"><b>4 of about 14</b><span>power transmission bids won</span><div class="dots" aria-hidden="true"><span class="on" style="--d:0.15s"></span><span class="on" style="--d:0.23s"></span><span class="on" style="--d:0.31s"></span><span class="on" style="--d:0.39s"></span><span class="" style="--d:0.47s"></span><span class="" style="--d:0.55s"></span><span class="" style="--d:0.63s"></span><span class="" style="--d:0.71s"></span><span class="" style="--d:0.79s"></span><span class="" style="--d:0.87s"></span><span class="" style="--d:0.95s"></span><span class="" style="--d:1.03s"></span><span class="" style="--d:1.11s"></span><span class="" style="--d:1.19s"></span></div></div>
+    <div class="stat rv" style="--d:.16s"><b>4 of about 11</b><span>road bids won</span><div class="dots" aria-hidden="true"><span class="on" style="--d:0.15s"></span><span class="on" style="--d:0.23s"></span><span class="on" style="--d:0.31s"></span><span class="on" style="--d:0.39s"></span><span class="" style="--d:0.47s"></span><span class="" style="--d:0.55s"></span><span class="" style="--d:0.63s"></span><span class="" style="--d:0.71s"></span><span class="" style="--d:0.79s"></span><span class="" style="--d:0.87s"></span><span class="" style="--d:0.95s"></span></div></div>
+    <div class="stat rv" style="--d:.24s"><b>50 MW (megawatts) / 100 MWh (megawatt-hours)</b><span>GUVNL (Gujarat Urja Vikas Nigam Limited) storage project won, carried through development and financial closure</span></div>
+    <div class="stat rv" style="--d:.32s"><b>565 MW / 1,130 MWh</b><span>standalone BESS (battery energy storage system) portfolio under GUVNL storage agreements</span></div>
   </div>
   <p class="note">Results achieved in the principal’s previous roles at Kalpataru Power Transmission, Advait Energy Transitions and KPI Green Energy.</p>
 </div></section>
 
 <section id="questions"><div class="wrap">
-  <div class="head"><div class="eyebrow">Questions we answer</div><h2>Start from the question you have on the table</h2>
+  <div class="head rv"><div class="eyebrow">Questions we answer</div><h2>Start from the question you have on the table</h2>
   <p>Each one is answered in writing, from the document in front of you, with every number traced to a clause or a stated assumption.</p></div>
   <div class="qs">
-    <div class="q"><h3>What tariff do I need to bid to win this tender?</h3><p>The tariff is derived from the tender document and stated assumptions, not chosen and then justified.</p><div class="for">Developers · EPC contractors</div></div>
-    <div class="q"><h3>What does each clause of this agreement really cost me?</h3><p>A clause-by-clause reading: who carries which risk, and what it costs in tariff terms.</p><div class="for">Developers · EPC contractors</div></div>
-    <div class="q"><h3>Is this supplier’s offer safe to accept?</h3><p>Offers normalised to a common basis, with the evidence gates that must be passed before you sign.</p><div class="for">Developers · EPC contractors</div></div>
-    <div class="q"><h3>Will this appraisal survive a lender’s read?</h3><p>A financial case rooted in the contract, with the scenarios that decide it laid open.</p><div class="for">Developers · Lenders</div></div>
-    <div class="q"><h3>Is this installation safe, and what happens after a loss?</h3><p>Requirements mapped to evidence, a graded opinion, and attribution after an incident.</p><div class="for">Lenders · Insurers</div></div>
-    <div class="q"><h3>How will this draft regulation or tender document affect us?</h3><p>Commentary on regulations, orders and tender documents, including tariff and statutory safety regimes.</p><div class="for">Authorities · Developers</div></div>
+    <div class="q rv"><h3>What tariff do I need to bid to win this tender?</h3><p>Derived from the tender document and stated assumptions, not chosen and then justified.</p><div class="for">Developers · EPC contractors</div></div>
+    <div class="q rv" style="--d:.06s"><h3>What does each clause of this agreement really cost me?</h3><p>Who carries which risk, and what it costs in tariff terms.</p><div class="for">Developers · EPC contractors</div></div>
+    <div class="q rv" style="--d:.12s"><h3>Is this supplier’s offer safe to accept?</h3><p>Offers normalised to a common basis, with the evidence gates to pass before you sign.</p><div class="for">Developers · EPC contractors</div></div>
+    <div class="q rv"><h3>Will this appraisal survive a lender’s read?</h3><p>A financial case rooted in the contract, with the deciding scenarios laid open.</p><div class="for">Developers · Lenders</div></div>
+    <div class="q rv" style="--d:.06s"><h3>Is this installation safe, and what happens after a loss?</h3><p>Requirements mapped to evidence, a graded opinion, and attribution after an incident.</p><div class="for">Lenders · Insurers</div></div>
+    <div class="q rv" style="--d:.12s"><h3>How will this draft regulation or tender document affect us?</h3><p>Commentary on regulations, orders and tender documents, including tariff and safety regimes.</p><div class="for">Authorities · Developers</div></div>
   </div>
   <div class="cta"><a class="btn dark" href="mailto:kausik@eikosadvisory.com?subject=Diagnostic%20request">Send me the document</a></div>
 </div></section>
 
-<section id="practice"><div class="wrap">
-  <div class="head"><div class="eyebrow">The practice</div><h2>One principal, two qualifications, named associates by discipline</h2>
-  <p>Mining and process safety, regulatory and appraisal practice, transmission and utility-scale storage.</p></div>
-  <div class="grid g2">
-    <div class="card"><h3>BE Mining, Shibpur · First Class Mine Manager’s Certificate, DGMS</h3><p>A statutory competency. The regime itself is the examined subject, and the duty rests personally on the holder.</p></div>
-    <div class="card"><h3>PGDBA, ICFAI · Third level CFA (India)</h3><p>Costing, appraisal, financial analysis, and the economic side of regulation.</p></div>
+<section id="example" class="alt"><div class="wrap">
+  <div class="head rv"><div class="eyebrow">A worked example</div><h2>What capex (capital expenditure) can a winning tariff carry?</h2>
+  <p>SJVN (formerly Satluj Jal Vidyut Nigam)’s 265 MW / 530 MWh standalone BESS tender in Haryana, won by NLC India Renewables (NLC: formerly Neyveli Lignite Corporation) at Rs 2.35 lakh (1 lakh = 100,000)/MW/month. Public information only; the arithmetic is shown so it can be checked.</p></div>
+  <div class="grid g3 swipe" style="margin-bottom:16px">
+    <div class="stat rv"><b>Rs 74.7 cr</b><span>annual revenue at the winning tariff, before availability</span></div>
+    <div class="stat rv" style="--d:.08s"><b>+19%</b><span>against Rs 1.97 lakh/MW/month at SJVN’s Panipat 250 MW auction</span></div>
+    <div class="stat rv" style="--d:.16s"><b>Rs 18 lakh/MWh</b><span>VGF (viability gap funding) ceiling, about Rs 95 crore (1 crore = 10 million) for the full project</span></div>
   </div>
-  <p class="bio">Kausik Chowdhuri began underground in coal mining at Eastern Coalfields (1987 to 1996), then worked in electricity regulation with DFID, CRISIL Advisory and KPMG, led PPP bids at Kalpataru Power Transmission for eleven years, and since 2020 has worked in solar, green hydrogen and battery storage. He signs every Eikos engagement personally.</p>
-  <div class="tablewrap" style="margin-top:16px" role="region" aria-label="Where each capability was built" tabindex="0">
+  <div class="wf rv" role="group" aria-label="Bridge from tariff revenue to supportable gross capex, Rs lakh per MWh">
+    <h3>From tariff to capex, Rs lakh per MWh</h3>
+    <div class="sub">Revenue at 95% availability is Rs 13.4 lakh per MWh a year.</div>
+    <div class="wf-rows"><div class="wf-row"><div class="wf-lab">Present value of revenue over 12 years, at a 10% project IRR (internal rate of return)</div><div class="wf-line"><div class="wf-track"><div class="wf-bar " style="left:0%;width:91.3%;--d:0s" title="Present value of revenue over 12 years, at a 10% project IRR: 91.3"></div></div><div class="wf-val">91.3</div></div></div><div class="wf-row"><div class="wf-lab">Less: present value of running costs</div><div class="wf-line"><div class="wf-track"><div class="wf-bar neg" style="left:77.8%;width:13.5%;--d:0.15s" title="Less: present value of running costs: −13.5"></div></div><div class="wf-val">−13.5</div></div></div><div class="wf-row"><div class="wf-lab">Revenue after running costs</div><div class="wf-line"><div class="wf-track"><div class="wf-bar " style="left:0%;width:77.8%;--d:0.3s" title="Revenue after running costs: 77.8"></div></div><div class="wf-val">77.8</div></div></div><div class="wf-row"><div class="wf-lab">Add: present value of the viability gap funding (VGF), paid in tranches</div><div class="wf-line"><div class="wf-track"><div class="wf-bar add" style="left:77.8%;width:16.6%;--d:0.45s" title="Add: present value of the viability gap funding (VGF), paid in tranches: +16.6"></div></div><div class="wf-val">+16.6</div></div></div><div class="wf-row"><div class="wf-lab">Gross capex the tariff can carry</div><div class="wf-line"><div class="wf-track"><div class="wf-bar total" style="left:0%;width:94.4%;--d:0.6s" title="Gross capex the tariff can carry: 94.4"></div></div><div class="wf-val">94.4</div></div></div></div>
+    <div class="wf-foot">For the whole 530 MWh project, <b>Rs 94.4 lakh/MWh is about Rs 500 crore</b>.</div>
+  </div>
+  <div class="tablewrap rv" role="region" aria-label="Sensitivity of supportable capex to tariff and return" tabindex="0"><table class="sens">
+    <thead><tr><th>Gross capex carried, Rs lakh/MWh</th><th>IRR 8%</th><th>IRR 10%</th><th>IRR 12%</th></tr></thead><tbody>
+    <tr><td>Tariff 1.97</td><td>87.5</td><td class="hl">81.5</td><td>76.2</td></tr>
+    <tr><td>Tariff 2.10</td><td>92.4</td><td class="hl">85.9</td><td>80.2</td></tr>
+    <tr><td>Tariff 2.25</td><td>97.9</td><td class="hl">91.0</td><td>84.9</td></tr>
+    <tr><td>Tariff 2.35</td><td>101.6</td><td class="hl">94.4</td><td>88.1</td></tr>
+    </tbody></table></div>
+  <div class="strip plain rv" style="margin-top:16px"><b>How to read it.</b> Set the figure against the price quoted for a 2-hour turnkey system. The gap between the two is the margin, or the risk, the winner has accepted. A bid decision is that comparison, made before the auction.</div>
+  <details><summary>Assumptions and sources</summary><div class="dbody"><p class="src" style="margin-top:0"><b>Assumptions, not from the tender:</b> 95% availability paid; O&amp;M (operation and maintenance) of 1.5% of capex a year, rising 3% a year; one augmentation spend of 5% of capex in year 7; VGF paid 10% at financial closure, 45% at commercial operation and 15% a year for the next three years, as in the government’s earlier BESS VGF scheme, and simplified to start at year 0. Pre-tax, before debt; tax and grid charges ignored. Public sources: <a href="https://www.saurenergy.com/solar-energy-news/nlc-india-renewables-win-265-mw-bess-tender-in-haryana-at-rs-235-lacsmwmonth-12573280">award report, Saur Energy</a>; <a href="https://solarquarter.com/2026/07/27/sjvn-invites-bids-for-265-mw-530-mwh-standalone-bess-project-in-haryana-under-vgf-scheme/">tender terms, SolarQuarter</a>; <a href="https://www.saurenergy.com/solar-energy-news/sjvn-discovers-tariff-of-rs-197-lakhmwmonth-for-its-2-hour-250-mw500-mwh-standalone-bess-tender-11104687">Panipat 250 MW result, Saur Energy</a>; <a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2118325&amp;reg=48&amp;lang=2">VGF scheme, PIB (Press Information Bureau)</a>. Illustration only, not advice on any bid.</p></div></details>
+</div></section>
+
+<section id="work"><div class="wrap">
+  <div class="head rv"><div class="eyebrow">What the practice does</div><h2>Five capabilities, in the order a project meets them</h2>
+  <p>The same five serve a developer, an EPC contractor, a lender and an insurer. Each buys a different part of the sequence, and each is told which part is being bought.</p></div>
+  <div class="grid g5 swipe">
+    <div class="card rv"><div class="cardhead"><span class="num">1</span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg></div><h3>Contract and risk</h3><ul><li>Obligation register</li><li>Clause-wise risk</li><li>Risk classification</li></ul><div class="for">Developers · EPC</div></div>
+    <div class="card rv" style="--d:.06s"><div class="cardhead"><span class="num">2</span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9h18v6H3z"/><path d="M7 9v3M11 9v4M15 9v3M19 9v4"/></svg></div><h3>Sizing and BOQ (bill of quantities)</h3><ul><li>Sizing to the interface point</li><li>BOQ on citable codes</li><li>Quantity basis</li></ul><div class="for">Developers · EPC</div></div>
+    <div class="card rv" style="--d:.12s"><div class="cardhead"><span class="num">3</span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-8M3 20h18"/></svg></div><h3>Commercial and decision</h3><ul><li>CMA (credit monitoring arrangement) and financial model</li><li>Bid decision</li><li>Impact and scenario analysis</li></ul><div class="for">Developers · Lenders</div></div>
+    <div class="card rv" style="--d:.18s"><div class="cardhead"><span class="num">4</span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11"/><path d="M3.5 6l1.5 1.5L7 5M3.5 12l1.5 1.5L7 11M3.5 18l1.5 1.5L7 17"/></svg></div><h3>Procurement support</h3><ul><li>Specification and enquiry</li><li>Offer normalisation</li><li>Evidence gates</li></ul><div class="for">Developers · EPC</div></div>
+    <div class="card rv" style="--d:.24s"><div class="cardhead"><span class="num">5</span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5L16 9.5"/></svg></div><h3>Performance audit and assurance</h3><ul><li>Requirement-to-evidence</li><li>Graded opinion</li><li>Taking over and attribution</li></ul><div class="for">Lenders · Insurers</div></div>
+  </div>
+  <div class="strip plain rv"><b>Policy and regulation.</b> Drafting and commentary on regulations, orders and tender documents; tariff and economic regulation; statutory safety regimes. For regulators, ministries and multilateral technical assistance.</div>
+
+  <div class="head rv" style="margin-top:56px"><div class="eyebrow">How a bid decision is built</div><h2>Storage bid to CMA</h2><p>One sector, one engagement type. The layers beneath a bid decision.</p></div>
+  <ol class="layers">
+    <li class="rv"><span class="num">4</span><b>Decision</b><span>Impact and scenario analysis: every route to the number, with the risk each route carries</span></li>
+    <li class="rv" style="--d:.08s"><span class="num">3</span><b>Financial</b><span>CMA and the financial model, rooted in the register rather than in a template</span></li>
+    <li class="rv" style="--d:.16s"><span class="num">2</span><b>Risk</b><span>Clause-cited risk register, classified on bearer, option, mechanism and quantification basis</span></li>
+    <li class="rv" style="--d:.24s"><span class="num">1</span><b>Cost</b><span>Obligation-derived sizing and BOQ to the interface point, every quantity on a code</span></li>
+  </ol>
+  <div class="strip rv">Glass box throughout. Every number traces to a clause or to a stated assumption, with a dated record of what it was checked against. What cannot be quantified is marked beside the model, never omitted silently.</div>
+</div></section>
+
+<section id="practice" class="alt"><div class="wrap">
+  <div class="head rv"><div class="eyebrow">The practice</div><h2>One principal, two qualifications, named associates by discipline</h2>
+  <p>Mining and process safety, regulatory and appraisal practice, transmission and utility-scale storage.</p></div>
+  <ol class="path rv" aria-label="Career path">
+    <li><span class="yrs">1987–96</span><b>Underground coal mining</b><span class="o">Eastern Coalfields</span></li>
+    <li><span class="yrs">1999–2007</span><b>Regulation and appraisal</b><span class="o">DFID (UK Department for International Development), CRISIL (Credit Rating Information Services of India Limited) Advisory, KPMG</span></li>
+    <li><span class="yrs">2007–18</span><b>PPP bids, eleven years</b><span class="o">Kalpataru Power Transmission</span></li>
+    <li><span class="yrs">2020 onward</span><b>Solar, hydrogen, storage</b><span class="o">Freyr, Advait, KPI Green</span></li>
+  </ol>
+  <div class="grid g2" style="margin-top:28px">
+    <div class="card rv"><h3>BE (Bachelor of Engineering) Mining, Shibpur · First Class Mine Manager’s Certificate, DGMS (Directorate General of Mines Safety)</h3><p>A statutory competency. The regime itself is the examined subject, and the duty rests personally on the holder.</p></div>
+    <div class="card rv" style="--d:.08s"><h3>PGDBA (Post Graduate Diploma in Business Administration), ICFAI (Institute of Chartered Financial Analysts of India) · Third level CFA (Chartered Financial Analyst, India)</h3><p>Costing, appraisal, financial analysis, and the economic side of regulation.</p></div>
+  </div>
+  <p class="bio rv">Kausik Chowdhuri signs every Eikos engagement personally. Named associates by discipline (electrical, mechanical, fire, civil, structural) are engaged engagement by engagement and named to the client at the outset. Responsibility for the output stays with Eikos.</p>
+  <details><summary>Where each capability was built</summary><div class="dbody"><div class="tablewrap" role="region" aria-label="Where each capability was built" tabindex="0">
   <table><thead><tr><th>Capability</th><th>Discipline</th><th>Where it was built</th></tr></thead><tbody>
     <tr><td>Contract and risk</td><td>Both</td><td>Kalpataru: Rs 6,500 cr of road and transmission assets, bid to financial close; storage tenders since</td></tr>
     <tr><td>Sizing and BOQ</td><td>Engineering</td><td>Kalpataru, Advait, KPI Green: transmission, electrolyser and standalone BESS</td></tr>
-    <tr><td>Commercial and decision</td><td>Business</td><td>CRISIL Advisory and KPMG: appraisal and tariff work; five years of road BOT bids, contract to model</td></tr>
+    <tr><td>Commercial and decision</td><td>Business</td><td>CRISIL Advisory and KPMG: appraisal and tariff work; five years of road BOT (build-operate-transfer) bids, contract to model</td></tr>
     <tr><td>Procurement support</td><td>Both</td><td>Eastern Coalfields and Kalpataru: specification, enquiry and what contractors deliver against it</td></tr>
     <tr><td>Performance audit and assurance</td><td>Engineering</td><td>Eastern Coalfields: nine years underground, safety officer and unit manager; three published safety handbooks</td></tr>
-    <tr><td>Policy and regulation</td><td>Both</td><td>DFID regulatory practice, four ADB technical assistance assignments, KPMG</td></tr>
-  </tbody></table></div>
-  <div class="strip">Named associates by discipline (electrical, mechanical, fire, civil, structural) are engaged engagement by engagement and named to the client at the outset. Responsibility for the output stays with Eikos.</div>
-</div></section>
-
-<section id="work" class="alt"><div class="wrap">
-  <div class="head"><div class="eyebrow">What the practice does</div><h2>Five capabilities, in the order a project meets them</h2>
-  <p>The same five serve a developer, an EPC contractor, a lender and an insurer. Each buys a different part of the sequence, and each is told which part is being bought.</p></div>
-  <div class="grid g5">
-    <div class="card"><span class="num">1</span><h3>Contract and risk</h3><ul><li>Obligation register</li><li>Clause-wise risk</li><li>Risk classification</li></ul><div class="for">Developers · EPC</div></div>
-    <div class="card"><span class="num">2</span><h3>Sizing and BOQ</h3><ul><li>Sizing to the interface point</li><li>BOQ on citable codes</li><li>Quantity basis</li></ul><div class="for">Developers · EPC</div></div>
-    <div class="card"><span class="num">3</span><h3>Commercial and decision</h3><ul><li>CMA and financial model</li><li>Bid decision</li><li>Impact and scenario analysis</li></ul><div class="for">Developers · Lenders</div></div>
-    <div class="card"><span class="num">4</span><h3>Procurement support</h3><ul><li>Specification and enquiry</li><li>Offer normalisation</li><li>Evidence gates</li></ul><div class="for">Developers · EPC</div></div>
-    <div class="card"><span class="num">5</span><h3>Performance audit and assurance</h3><ul><li>Requirement-to-evidence</li><li>Graded opinion</li><li>Taking over and attribution</li></ul><div class="for">Lenders · Insurers</div></div>
-  </div>
-  <div class="strip plain"><b>Policy and regulation.</b> Drafting and commentary on regulations, orders and tender documents; tariff and economic regulation; statutory safety regimes. For regulators, ministries and multilateral technical assistance.</div>
-
-  <div class="head" style="margin-top:56px"><div class="eyebrow">A worked example</div><h2>Storage bid to CMA</h2><p>One sector, one engagement type. The layers beneath a bid decision.</p></div>
-  <ol class="layers">
-    <li><span class="num">4</span><b>Decision</b><span>Impact and scenario analysis: every route to the number, with the risk each route carries</span></li>
-    <li><span class="num">3</span><b>Financial</b><span>CMA and the financial model, rooted in the register rather than in a template</span></li>
-    <li><span class="num">2</span><b>Risk</b><span>Clause-cited risk register, classified on bearer, option, mechanism and quantification basis</span></li>
-    <li><span class="num">1</span><b>Cost</b><span>Obligation-derived sizing and BOQ to the interface point, every quantity on a code</span></li>
-  </ol>
-  <div class="strip">Glass box throughout. Every number traces to a clause or to a stated assumption, with a dated record of what it was checked against. What cannot be quantified is marked beside the model, never omitted silently.</div>
-</div></section>
-
-<section id="example"><div class="wrap">
-  <div class="head"><div class="eyebrow">A worked example</div><h2>What capex can a winning tariff carry?</h2>
-  <p>SJVN’s 265 MW / 530 MWh standalone BESS tender in Haryana, won by NLC India Renewables at Rs 2.35 lakh/MW/month. Public information only; the arithmetic is shown so it can be checked.</p></div>
-  <div class="grid g3" style="margin-bottom:16px">
-    <div class="stat"><b>Rs 74.7 cr</b><span>annual revenue at the winning tariff, before availability</span></div>
-    <div class="stat"><b>+19%</b><span>against Rs 1.97 lakh/MW/month at SJVN’s Panipat 250 MW auction</span></div>
-    <div class="stat"><b>Rs 18 lakh/MWh</b><span>VGF ceiling, about Rs 95 crore for the full project</span></div>
-  </div>
-  <div class="ex">
-    <div class="tablewrap" role="region" aria-label="From tariff to capex" tabindex="0"><table>
-      <thead><tr><th>From tariff to capex, Rs lakh per MWh</th><th>Value</th></tr></thead><tbody>
-      <tr><td>Tariff revenue per year, at 95% availability</td><td>13.4</td></tr>
-      <tr><td>Present value of revenue over 12 years, at a 10% project IRR</td><td>91.3</td></tr>
-      <tr><td>Less: present value of running costs</td><td>(13.5)</td></tr>
-      <tr><td>Revenue after running costs</td><td>77.8</td></tr>
-      <tr><td>Add: present value of the Rs 18.0 VGF, received in tranches</td><td>16.6</td></tr>
-      <tr class="tot"><td>Gross capex the tariff can carry</td><td>94.4</td></tr>
-      <tr class="tot"><td>For the whole 530 MWh project</td><td>Rs 500 crore</td></tr>
-      </tbody></table></div>
-    <div class="tablewrap" role="region" aria-label="Sensitivity of supportable capex to tariff and return" tabindex="0"><table class="sens">
-      <thead><tr><th>Gross capex carried, Rs lakh/MWh</th><th>IRR 8%</th><th>IRR 10%</th><th>IRR 12%</th></tr></thead><tbody>
-      <tr><td>Tariff 1.97</td><td>87.5</td><td class="hl">81.5</td><td>76.2</td></tr>
-      <tr><td>Tariff 2.10</td><td>92.4</td><td class="hl">85.9</td><td>80.2</td></tr>
-      <tr><td>Tariff 2.25</td><td>97.9</td><td class="hl">91.0</td><td>84.9</td></tr>
-      <tr><td>Tariff 2.35</td><td>101.6</td><td class="hl">94.4</td><td>88.1</td></tr>
-      </tbody></table></div>
-  </div>
-  <div class="strip plain" style="margin-top:16px"><b>How to read it.</b> Set the figure against the price quoted for a 2-hour turnkey system. The gap between the two is the margin, or the risk, the winner has accepted. A bid decision is that comparison, made before the auction.</div>
-  <p class="src"><b>Assumptions, not from the tender:</b> 95% availability paid; O&amp;M of 1.5% of capex a year, rising 3% a year; one augmentation spend of 5% of capex in year 7; VGF paid 10% at financial closure, 45% at commercial operation and 15% a year for the next three years, as in the government’s earlier BESS VGF scheme, and simplified to start at year 0. Pre-tax, before debt; tax and grid charges ignored. Public sources: <a href="https://www.saurenergy.com/solar-energy-news/nlc-india-renewables-win-265-mw-bess-tender-in-haryana-at-rs-235-lacsmwmonth-12573280">award report, Saur Energy</a>; <a href="https://solarquarter.com/2026/07/27/sjvn-invites-bids-for-265-mw-530-mwh-standalone-bess-project-in-haryana-under-vgf-scheme/">tender terms, SolarQuarter</a>; <a href="https://www.saurenergy.com/solar-energy-news/sjvn-discovers-tariff-of-rs-197-lakhmwmonth-for-its-2-hour-250-mw500-mwh-standalone-bess-tender-11104687">Panipat 250 MW result, Saur Energy</a>; <a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2118325&amp;reg=48&amp;lang=2">VGF scheme, PIB</a>. Illustration only, not advice on any bid.</p>
+    <tr><td>Policy and regulation</td><td>Both</td><td>DFID regulatory practice, four ADB (Asian Development Bank) technical assistance assignments, KPMG</td></tr>
+  </tbody></table></div></div></details>
 </div></section>
 
 <section id="sectors"><div class="wrap">
-  <div class="head"><div class="eyebrow">Sectors</div><h2>Where the work has been done, and what each rests on</h2></div>
-  <div class="grid g3">
-    <div class="card"><h3>Grid-scale storage</h3><p>Standalone and co-located BESS: tender to CMA, safety assurance, taking over. BESS manufacturing strategy: entry route, technology and supplier selection, certification programme.</p><div class="basis">Advait, KPI Green; three published works</div></div>
-    <div class="card"><h3>Distribution and transmission</h3><p>Utility-scale lines and substations, sanction to commissioning.</p><div class="basis">Kalpataru Power Transmission; Rs 6,500 cr of road and transmission assets</div></div>
-    <div class="card"><h3>Solar</h3><p>Utility-scale and distributed solar, and solar co-located with storage.</p><div class="basis">Freyr Energy; solar-plus-storage sizing</div></div>
-    <div class="card"><h3>Coal, mining and gasification</h3><p>Deep-seam methane drainage and mine safety under a statutory regime. Surface coal and lignite gasification: feedstock assurance, eligible-cost definition, lender-side appraisal.</p><div class="basis">Eastern Coalfields, nine years; published CBM safety handbook</div></div>
-    <div class="card"><h3>Green hydrogen and derivatives</h3><p>Electrolyser sizing against a delivery obligation; ammonia synthesis safety.</p><div class="basis">Advait; published green-ammonia safety work</div></div>
-    <div class="card"><h3>Concession infrastructure</h3><p>Roads on HAM, BOT and TOT. Termination, milestones, annuity mechanics.</p><div class="basis">Kalpataru; five years of road BOT bids</div></div>
+  <div class="head rv"><div class="eyebrow">Sectors</div><h2>Where the work has been done, and what each rests on</h2></div>
+  <div class="grid g3 swipe">
+    <div class="card rv"><div class="sec-ico"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="8" width="16" height="9" rx="1"/><path d="M21 11v3M7 11v3M11 11v3M15 11v3"/></svg><h3>Grid-scale storage</h3></div><p>Standalone and co-located BESS: tender to CMA, safety assurance, taking over. BESS manufacturing strategy: entry route, technology and supplier selection, certification programme.</p><div class="basis">Advait, KPI Green; three published works</div></div>
+    <div class="card rv" style="--d:.06s"><div class="sec-ico"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M7 21l5-12 5 12M8 13h8M9.5 17h5M12 3l-5 4M12 3l5 4M3 7h8M13 7h8"/></svg><h3>Distribution and transmission</h3></div><p>Utility-scale lines and substations, sanction to commissioning.</p><div class="basis">Kalpataru Power Transmission; Rs 6,500 cr of road and transmission assets</div></div>
+    <div class="card rv" style="--d:.12s"><div class="sec-ico"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg><h3>Solar</h3></div><p>Utility-scale and distributed solar, and solar co-located with storage.</p><div class="basis">Freyr Energy; solar-plus-storage sizing</div></div>
+    <div class="card rv"><div class="sec-ico"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 15a7 7 0 0114 0"/><path d="M3 15h18v3H3zM12 6v4"/></svg><h3>Coal, mining and gasification</h3></div><p>Deep-seam methane drainage and mine safety under a statutory regime. Surface coal and lignite gasification: feedstock assurance, eligible-cost definition, lender-side appraisal.</p><div class="basis">Eastern Coalfields, nine years; published CBM (coal bed methane) safety handbook</div></div>
+    <div class="card rv" style="--d:.06s"><div class="sec-ico"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><text x="12" y="15.6" text-anchor="middle" font-size="9" font-family="Georgia,serif" stroke="none" fill="currentColor" style="fill:var(--copper)">H₂</text></svg><h3>Green hydrogen and derivatives</h3></div><p>Electrolyser sizing against a delivery obligation; ammonia synthesis safety.</p><div class="basis">Advait; published green-ammonia safety work</div></div>
+    <div class="card rv" style="--d:.12s"><div class="sec-ico"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3L5 21M15 3l4 18M12 5v3M12 11v3M12 17v3"/></svg><h3>Concession infrastructure</h3></div><p>Roads on HAM (hybrid annuity model), BOT and TOT (toll-operate-transfer). Termination, milestones, annuity mechanics.</p><div class="basis">Kalpataru; five years of road BOT bids</div></div>
   </div>
-  <div class="strip plain">The contract layer (obligation register, risk classification, coverage) belongs to long-term infrastructure contracts, not to any one sector. The sizing engine is rebuilt per domain.</div>
+  <div class="strip plain rv">The contract layer (obligation register, risk classification, coverage) belongs to long-term infrastructure contracts, not to any one sector. The sizing engine is rebuilt per domain.</div>
 </div></section>
 
 <section id="record" class="alt"><div class="wrap">
-  <div class="head"><div class="eyebrow">The published record</div><h2>Seven works, open access and permanent</h2>
-  <p>Citable by anyone, including a tribunal. All records are under ORCID 0009-0001-8271-751X, CC-BY. Concept DOIs are cited, so each link resolves to the current version.</p></div>
+  <div class="head rv"><div class="eyebrow">The published record</div><h2>Seven works, open access and permanent</h2>
+  <p>Citable by anyone, including a tribunal. All records are under ORCID 0009-0001-8271-751X, CC-BY (Creative Commons Attribution). Concept DOIs (digital object identifiers) are cited, so each link resolves to the current version.</p></div>
+  <div class="record-nums rv" aria-label="Numbered requirements in the three safety handbooks"><div><b>63</b><span>requirements, battery storage</span></div><div><b>64</b><span>requirements, coal bed methane</span></div><div><b>47</b><span>requirements, green ammonia</span></div></div>
   <div class="rec">
     <div><h3>Safety Assurance of Grid-Scale Battery Energy Storage Systems</h3><p>63 numbered requirements</p><a href="https://doi.org/10.5281/zenodo.21969460">doi.org/10.5281/zenodo.21969460</a></div>
     <div><h3>The Graded Audit Opinion in Use</h3><p>One installation, two audits: how a finding moves as the window closes</p><a href="https://doi.org/10.5281/zenodo.21983328">doi.org/10.5281/zenodo.21983328</a></div>
@@ -290,44 +408,51 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
   </div>
 </div></section>
 
-<section id="engage"><div class="wrap">
-  <div class="head"><div class="eyebrow">How engagements work</div><h2>Three shapes, and where to start</h2>
-  <p>Fixed fee for the work. A success element only where the outcome is defined and verifiable.</p></div>
-  <div class="grid g3">
-    <div class="card"><h3>Diagnostic</h3><div class="fee">Fixed fee, short</div><ul><li>A tender, supply agreement, offer or draft specification read, with a written opinion</li><li>Delivered as findings, not as a proposal for more work</li></ul></div>
-    <div class="card"><h3>Defined scope</h3><div class="fee">Fixed fee in milestones, plus a fee on the outcome where one is defined</div><ul><li>A bid, an appraisal, a certification programme, a supplier introduction to a bid</li><li>Fee on the order placed or closure achieved; none in bid advisory or assurance</li></ul></div>
-    <div class="card"><h3>Retained</h3><div class="fee">Monthly retainer, or per call-off; fee on orders won where applicable</div><ul><li>A programme carried through: a bid season, an entry route, a manufacturer’s sales support</li><li>Retainer set off against any fee on orders</li></ul></div>
+<section id="knowledge"><div class="wrap">
+  <div class="head rv"><div class="eyebrow">Knowledge Centre</div><h2>Public developments, read for the value chain</h2>
+  <p>Short analyses of Indian power and storage policy, regulation, bids and technology. Every figure is sourced, and every derived number shows its basis.</p></div>
+  <div class="kc swipe">
+    <a class="kcard rv" href="knowledge.html#gec3"><span class="tag">Policy</span><h3>Green Energy Corridor Phase-III: storage joins the transmission plan</h3><p>135 GW (gigawatts) of renewable evacuation and 50 GWh (gigawatt-hours) of storage by FY (financial year) 2032-33.</p><span class="more">Read →</span></a>
+    <a class="kcard rv" style="--d:.06s" href="knowledge.html#merc"><span class="tag">Regulation</span><h3>Maharashtra’s draft storage rules</h3><p>Storage becomes the price of grid access, and safety is left to others.</p><span class="more">Read →</span></a>
+    <a class="kcard rv" style="--d:.12s" href="knowledge.html#bids"><span class="tag">Bids</span><h3>A tariff is a capex statement</h3><p>Five storage auctions read backwards: tariffs up 27%, supportable capex up 22%.</p><span class="more">Read →</span></a>
+    <a class="kcard rv" style="--d:.18s" href="knowledge.html#gh2"><span class="tag">Technology</span><h3>Green hydrogen: the gap between allocation and commissioning</h3><p>8.62 lakh t/yr (tonnes a year) incentivised; about 1% to 1.3% reported operating.</p><span class="more">Read →</span></a>
   </div>
-  <h3 style="margin-top:40px">Most relationships begin with one document and a written opinion on it</h3>
-  <ul class="starts">
-    <li>A tender you are deciding whether to bid</li>
-    <li>A supply agreement or technical offer you are about to accept</li>
-    <li>An appraisal that has to survive being read again in three years</li>
-    <li>A draft regulation or tender document out for comment</li>
-    <li>A plant approaching taking over, or a loss that needs attribution</li>
-    <li>A coal gasification application, or a lender’s appraisal of one</li>
-  </ul>
-  <div class="startbox"><h3>Start with one document</h3><p>Send the tender, agreement, offer or draft you are about to act on, with the decision it feeds and the date you need to decide by. You receive a written opinion at a fixed fee, agreed before any work begins.</p>
+  <div class="cta"><a class="btn dark" href="mailto:kausik@eikosadvisory.com?subject=Subscribe%20to%20Eikos%20Knowledge%20Centre&amp;body=Name%3A%0AOrganisation%3A%0ATopics%20(Policy%2C%20Regulation%2C%20Bids%2C%20Technology)%3A">Subscribe</a><a class="btn dark" style="background:transparent;color:var(--ink);border-color:var(--line)" href="https://www.linkedin.com/in/kausik-chowdhuri-89508714">Follow on LinkedIn</a></div>
+</div></section>
+
+<section id="engage" class="alt"><div class="wrap">
+  <div class="head rv"><div class="eyebrow">How engagements work</div><h2>Three shapes, and where to start</h2>
+  <p>Fixed fee for the work. A success element only where the outcome is defined and verifiable.</p></div>
+  <div class="grid g3 swipe">
+    <div class="card rv"><h3>Diagnostic</h3><div class="fee">Fixed fee, short</div><ul><li>A tender, supply agreement, offer or draft specification read, with a written opinion</li><li>Delivered as findings, not as a proposal for more work</li></ul></div>
+    <div class="card rv" style="--d:.08s"><h3>Defined scope</h3><div class="fee">Fixed fee in milestones, plus a fee on the outcome where one is defined</div><ul><li>A bid, an appraisal, a certification programme, a supplier introduction to a bid</li><li>Fee on the order placed or closure achieved; none in bid advisory or assurance</li></ul></div>
+    <div class="card rv" style="--d:.16s"><h3>Retained</h3><div class="fee">Monthly retainer, or per call-off; fee on orders won where applicable</div><ul><li>A programme carried through: a bid season, an entry route, a manufacturer’s sales support</li><li>Retainer set off against any fee on orders</li></ul></div>
+  </div>
+  <div class="startbox rv"><h3>Start with one document</h3><p>Send the tender, agreement, offer or draft you are about to act on, with the decision it feeds and the date you need to decide by. You receive a written opinion at a fixed fee, agreed before any work begins.</p>
   <div class="cta"><a class="btn" href="mailto:kausik@eikosadvisory.com?subject=Diagnostic%20request&amp;body=Document%20to%20be%20reviewed%3A%0ADecision%20it%20feeds%3A%0ADate%20needed%20by%3A">Send me the document</a><a class="btn ghost" href="https://wa.me/919833945444">WhatsApp</a></div></div>
 </div></section>
 
-<section id="independence" class="alt"><div class="wrap">
-  <div class="head"><div class="eyebrow">Independence</div><h2>Stated in advance, because the question will be asked</h2></div>
-  <div class="two">
-    <div class="card"><h3>Cannot be combined on one project</h3><ul>
+<section id="independence"><div class="wrap">
+  <div class="head rv"><div class="eyebrow">Independence</div><h2>Stated in advance, because the question will be asked</h2></div>
+  <div class="keys">
+    <div class="card rv"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5L16 9.5"/></svg><h3>One side of a project at a time</h3><p>A conflict check before any engagement is accepted, and the side declared in writing.</p></div>
+    <div class="card rv" style="--d:.08s"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11"/><path d="M3.5 6l1.5 1.5L7 5M3.5 12l1.5 1.5L7 11M3.5 18l1.5 1.5L7 17"/></svg><h3>No equipment, no outcome fees in audits</h3><p>The LLP’s registered objects bar it from manufacturing, supplying, installing, operating or trading in any plant or equipment of a kind it audits, inspects or reports upon. No remuneration is linked to the outcome or the findings of any audit.</p></div>
+  </div>
+  <details><summary>The full rules</summary><div class="dbody"><div class="two">
+    <div><h3 style="font-size:1.05rem">Cannot be combined on one project</h3><ul>
       <li>Bid advisory to a developer and lender’s appraisal of that same project</li>
       <li>Drafting a regulation, order or tender document for an authority and advising a party on its response to that same document</li>
       <li>Advice to a buyer on supplier selection and an undisclosed fee from a supplier under consideration</li>
       <li>Expert opinion for one party and any prior engagement for the other on the same facts</li></ul></div>
-    <div class="card"><h3>How it is handled</h3><ul>
+    <div><h3 style="font-size:1.05rem">How it is handled</h3><ul>
       <li>A conflict check before any engagement is accepted, on the project and on the counterparties</li>
       <li>One side of a project at a time, declared in writing</li>
       <li>Any fee payable by a third party is disclosed in writing to the client and accepted before it is earned, and is never taken in bid advisory or on an assurance mandate</li>
       <li>The LLP’s registered objects bar it from manufacturing, supplying, installing, operating or trading in any plant or equipment of a kind it audits, inspects or reports upon</li>
       <li>No remuneration is linked to the outcome or the findings of any audit</li>
       <li>Prior work disclosed to a tribunal or a lender without being asked</li></ul></div>
-  </div>
-  <div class="strip">An opinion is worth what its independence is worth. A practice that will take either side of the same question is selling advocacy, and it should be priced as advocacy.</div>
+  </div></div></details>
+  <div class="strip rv">An opinion is worth what its independence is worth. A practice that will take either side of the same question is selling advocacy, and it should be priced as advocacy.</div>
 </div></section>
 
 <div class="contact" id="contact"><div class="wrap">
@@ -349,7 +474,11 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 2
     function sel(){var r=document.createRange();r.selectNodeContents(a);var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected, press copy'}
     try{navigator.clipboard.writeText(t).then(ok,sel)}catch(e){sel()}
   });
+  var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+  document.querySelectorAll('.swipe .rv').forEach(function(e){e.classList.add('in')});
+  els.forEach(function(e){io.observe(e)});
 })();
 </script>
-
 </body></html>
